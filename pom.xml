@@ -112,7 +112,7 @@
         <Emma_plugin_version>1.0-alpha-3</Emma_plugin_version>
         <Emma4It_plugin_version>1.3</Emma4It_plugin_version>
         <Emma_sonar_plugin_version>1.2</Emma_sonar_plugin_version>
-        <Enforcer_plugin_version>1.1</Enforcer_plugin_version>
+        <Enforcer_plugin_version>1.1.1</Enforcer_plugin_version>
         <Enforcer_extra_rules_version>1.0-alpha-3</Enforcer_extra_rules_version>
         <Exec_plugin_version>1.2.1</Exec_plugin_version>
         <FailSafe_plugin_version>${SureFire_plugin_version}</FailSafe_plugin_version>
