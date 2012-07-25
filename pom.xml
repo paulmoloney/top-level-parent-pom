@@ -2453,7 +2453,7 @@
 
     <scm>
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
-        <developerConnection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</developerConnection>
+        <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
         <url>scm:git:git://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
     </scm>
     
