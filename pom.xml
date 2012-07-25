@@ -27,13 +27,14 @@
         <Jenkins_url>http://localhost/jenkins</Jenkins_url-->                
         <!--siteGroupId>${groupId.replaceAll('.','/')}</siteGroupId-->
         <!--siteGroupId>ie/pmoloney</siteGroupId-->
+        
         <site_deploy_url>gitsite:git@github.com/</site_deploy_url>
         <system_path_seperator>:</system_path_seperator>
-		<executable_ext></executable_ext>
-		<shell_ext>sh</shell_ext>
-		<dynamic_library_ext>so</dynamic_library_ext>
-		<static_library_ext>a</static_library_ext>
-		<installer_ext>rpm</installer_ext>
+        <executable_ext></executable_ext>
+        <shell_ext>sh</shell_ext>
+        <dynamic_library_ext>so</dynamic_library_ext>
+        <static_library_ext>a</static_library_ext>
+        <installer_ext>rpm</installer_ext>
         <java_lang_level>1.6</java_lang_level>
         <maven.compiler.source>${java_lang_level}</maven.compiler.source>
         <maven.compiler.testSource>${java_lang_level}</maven.compiler.testSource>
@@ -70,7 +71,8 @@
         <FbContrib_version_jar>4.6.1</FbContrib_version_jar>
         <Pmd_dependency_jar>5.0.0</Pmd_dependency_jar>
         <LessCss_dependency_jar>1.3.0</LessCss_dependency_jar>
-
+        <WagonGitSite_dependency_jar>0.3.1</WagonGitSite_dependency_jar>
+        
         <Scala_version_jar>2.9.2</Scala_version_jar>
         <Gmaven_provider_version>2.0</Gmaven_provider_version>
         <Gmaven_runtime_version>${Gmaven_provider_version}</Gmaven_runtime_version>
@@ -378,7 +380,7 @@
             <extension>
                 <groupId>org.kathrynhuxtable.maven.wagon</groupId>
                 <artifactId>wagon-gitsite</artifactId>
-                <version>0.3.1</version>
+                <version>${WagonGitSite_dependency_jar}</version>
             </extension>          
         </extensions>
 
@@ -993,6 +995,21 @@
                             <artifactId>wagon-webdav-jackrabbit</artifactId>
                             <version>${Wagon_dependency_jar}</version>
                         </dependency>
+			            <dependency>
+			                <groupId>org.apache.maven.scm</groupId>
+			                <artifactId>maven-scm-provider-gitexe</artifactId>
+			                <version>${Scm_plugin_version}</version>
+			            </dependency>
+			            <dependency>
+			                <groupId>org.apache.maven.scm</groupId>
+			                <artifactId>maven-scm-manager-plexus</artifactId>
+			                <version>${Scm_plugin_version}</version>
+			            </dependency>
+			            <dependency>
+			                <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+			                <artifactId>wagon-gitsite</artifactId>
+			                <version>${WagonGitSite_dependency_jar}</version>
+			            </dependency>
                     </dependencies>
                 </plugin>
                 <plugin>
@@ -2719,6 +2736,21 @@
                             <artifactId>wagon-webdav-jackrabbit</artifactId>
                             <version>${Wagon_dependency_jar}</version>
                         </dependency>
+			            <dependency>
+			                <groupId>org.apache.maven.scm</groupId>
+			                <artifactId>maven-scm-provider-gitexe</artifactId>
+			                <version>${Scm_plugin_version}</version>
+			            </dependency>
+			            <dependency>
+			                <groupId>org.apache.maven.scm</groupId>
+			                <artifactId>maven-scm-manager-plexus</artifactId>
+			                <version>${Scm_plugin_version}</version>
+			            </dependency>
+			            <dependency>
+			                <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+			                <artifactId>wagon-gitsite</artifactId>
+			                <version>${WagonGitSite_dependency_jar}</version>
+			            </dependency>                        
                      </dependencies>
                 </plugin>
                 </plugins>
@@ -2839,11 +2871,15 @@
                                         <allowedRepositories>
                                             <allowedRepository>releases</allowedRepository>
                                             <allowedRepository>snapshots</allowedRepository>
+                                            <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
+                                            <allowedRepository>sonatype-nexus-staging</allowedRepository>
                                         </allowedRepositories>
                                         <allowedPluginRepositories>
                                             <allowedPluginRepository>releases</allowedPluginRepository>
                                             <allowedPluginRepository>snapshots</allowedPluginRepository>
-                                      </allowedPluginRepositories>
+                                            <allowedRepository>sonatype-nexus-staging</allowedRepository>
+                                            <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
+                                        </allowedPluginRepositories>
                                 </requireNoRepositories>
                                 <requireProperty>
                                     <property>project.version</property>
