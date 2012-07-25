@@ -7,14 +7,14 @@
         <version>7</version>
     </parent>
     
-    <groupId>ie.pmoloney</groupId>
+    <groupId>com.github.paulmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
     <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
     <description>This project is used for locking down plugin versions and establishing basic configuration for all Maven based projects</description>
-    <url>http://paulmoloney.github.com/top-level-parent-pom</url>
+    <url>https://paulmoloney.github.com/top-level-parent-pom</url>
 
      <properties>
         <!-- Following are defined in settings.xml -->
@@ -322,9 +322,9 @@
         <mavenExecutorId>invoker</mavenExecutorId> <!-- forked-path if start using gpg -->
         <arguments>-Dmaven.test.skip.exec=true</arguments>
         <useReleaseProfile>true</useReleaseProfile>
-        <releaseProfiles>release-profile,me-release-profile</releaseProfiles>
-        <pushChanges>true</pushChanges> <!-- false for git or similar dscm -->
-        <localCheckout>false</localCheckout> <!-- true for git or similar dscm -->
+        <releaseProfiles>release-profile,me-release-profile </releaseProfiles>
+        <pushChanges>false</pushChanges> <!-- false for git or similar dscm -->
+        <localCheckout>true</localCheckout> <!-- true for git or similar dscm -->
         <completionGoals></completionGoals>
         <goals>deploy</goals>
         <preparationGoals>clean verify</preparationGoals>
@@ -2385,16 +2385,16 @@
         </plugins>
     </reporting>
 
-    <inceptionYear>December 2010</inceptionYear>
+    <inceptionYear>2010</inceptionYear>
 
     <developers>
         <developer>
             <id>moloneyp</id>
             <name>Paul Moloney</name>
-            <email>paul.moloney@me.ie</email>
-            <url>http://www..ie</url>
+            <email></email>
+            <url></url>
             <organization></organization>
-            <organizationUrl>http://www..ie</organizationUrl>
+            <organizationUrl></organizationUrl>
             <timezone>GMT</timezone>
             <roles>
                 <role>developer</role>
@@ -2404,7 +2404,7 @@
 
     <organization>
         <name></name>
-        <url>http://www..ie</url>
+        <url></url>
     </organization>
 
     <issueManagement>
@@ -2414,7 +2414,7 @@
 
     <licenses>
         <license>
-            <name>Apache 2.0</name>
+            <name>The Apache Software License, Version 2.0</name>
             <url><![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]></url>
             <distribution>repo</distribution>
             <comments><![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]></comments>
@@ -2454,7 +2454,7 @@
     <scm>
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
-        <url>scm:git:git://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
+        <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
     </scm>
     
     <distributionManagement>
@@ -2957,6 +2957,13 @@
                     <value>true</value>
                 </property>
             </activation>
+            
+            <properties>
+                <gpg.skip>false</gpg.skip>
+                <gpg.useagent>true</gpg.useagent>
+                <mavenExecutorId>forked-path</mavenExecutorId>                 
+            </properties>
+            
             <build>
                 <plugins>
                     <plugin>
