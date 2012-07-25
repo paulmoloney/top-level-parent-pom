@@ -14,18 +14,27 @@
 
     <name>My top level parent project pom</name>
     <description>This project is used for locking down plugin versions and establishing basic configuration for all Maven based projects</description>
-    <url>http://www..ie</url>
+    <url>http://paulmoloney.github.com/top-level-parent-pom</url>
 
      <properties>
+        <!-- Following are defined in settings.xml -->
+        <!--site_deploy_url>file:/opt/shared/projects/maven-sites</site_deploy_url>
+        <distro_release_url>http://localhost/nexus/content/repositories/releases</distro_release_url>
+        <distro_snapshot_url>http://localhost/ontent/repositories/snapshots</distro_snapshot_url>
+        <sonar.host.url>http://localhost/sonar</sonar.host.url>
+        <Sonar_plugin_version>3.1.1</Sonar_plugin_version>
+        <versions_xml_url>http://localhost</versions_xml_url>
+        <Jenkins_url>http://localhost/jenkins</Jenkins_url-->                
         <!--siteGroupId>${groupId.replaceAll('.','/')}</siteGroupId-->
-        <siteGroupId>ie/</siteGroupId>
+        <!--siteGroupId>ie/pmoloney</siteGroupId-->
+        <site_deploy_url>gitsite:git@github.com/</site_deploy_url>
         <system_path_seperator>:</system_path_seperator>
 		<executable_ext></executable_ext>
 		<shell_ext>sh</shell_ext>
 		<dynamic_library_ext>so</dynamic_library_ext>
 		<static_library_ext>a</static_library_ext>
 		<installer_ext>rpm</installer_ext>
-        <java_lang_level>1.5</java_lang_level>
+        <java_lang_level>1.6</java_lang_level>
         <maven.compiler.source>${java_lang_level}</maven.compiler.source>
         <maven.compiler.testSource>${java_lang_level}</maven.compiler.testSource>
         <maven.compiler.target>${java_lang_level}</maven.compiler.target>
@@ -47,7 +56,7 @@
         <project.reporting.outputEncoding>${file_encoding}</project.reporting.outputEncoding>
         <outputEncoding>${file_encoding}</outputEncoding>
 
-        <project_animal_java_sniffer_source_level>java15</project_animal_java_sniffer_source_level>
+        <project_animal_java_sniffer_source_level>java16</project_animal_java_sniffer_source_level>
         <project_animal_java_sniffer_source_version>1.0</project_animal_java_sniffer_source_version>
 
         <project_animal_sniffer_rule_plugin_version>${AnimalSniffer_plugin_version}</project_animal_sniffer_rule_plugin_version>
@@ -266,8 +275,8 @@
         <jdk8Name>JavaSE-1.8</jdk8Name>
         <jdk9Name>JavaSE-1.9</jdk9Name>
 
-        <jdkName>${jdk5Name}</jdkName>
-        <minJdk>${java_lang_level}.0-18</minJdk>
+        <jdkName>${jdk6Name}</jdkName>
+        <minJdk>${java_lang_level}.0-30</minJdk>
         <maxJdk>1.6</maxJdk>
         <requireJavaVersion>[${minJdk},${maxJdk})</requireJavaVersion>
         <jdkToolChainVersion>${java_lang_level}</jdkToolChainVersion>
@@ -320,18 +329,12 @@
         <me_cobertura_pattern>ie.*</me_cobertura_pattern>
     </properties>
 
-    <scm>
-        <connection>scm:</connection>
-        <developerConnection>scm:</developerConnection>
-        <url></url>
-    </scm>
-
     <prerequisites>
         <maven>${minMaven}</maven>
     </prerequisites>
 
     <build>
-        <!--extensions>
+        <extensions>
             <extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-file</artifactId>
@@ -362,7 +365,22 @@
                 <artifactId>wagon-webdav-jackrabbit</artifactId>
                 <version>${Wagon_dependency_jar}</version>
             </extension>
-        </extensions-->
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <version>${Scm_plugin_version}</version>
+            </extension>
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-manager-plexus</artifactId>
+                <version>${Scm_plugin_version}</version>
+            </extension>
+            <extension>
+                <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+                <artifactId>wagon-gitsite</artifactId>
+                <version>0.3.1</version>
+            </extension>          
+        </extensions>
 
         <!-- Slightly different from standard as we seperate out those that require substitution -->
         <resources>
@@ -2144,54 +2162,6 @@
             <!-- codehaus, keep in alphabetical order or by phase -->
             <!-- google code hosted, keep in alphabetical order or by phase  -->
         </plugins>
-
-        <extensions>
-            <!--extension>
-                <groupId>org.apache.maven.scm</groupId>
-                <artifactId>maven-scm-provider-gitexe</artifactId>
-                <version>${Scm_plugin_version}</version> < ! - - was 1.3 - ->
-            </extension>
-            <extension>
-                <groupId>org.apache.maven.scm</groupId>
-                <artifactId>maven-scm-manager-plexus</artifactId>
-                <version>${Scm_plugin_version}</version> < !- - was 1.3 - ->
-            </extension>
-            <extension>
-                <groupId>org.kathrynhuxtable.maven.wagon</groupId>
-                <artifactId>wagon-gitsite</artifactId>
-                <version>0.3.1</version> < !- - github site pages - ->
-            </extension-->
-            <!--extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-file</artifactId>
-                <version>${Wagon_dependency_jar}</version>
-            </extension>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ftp</artifactId>
-                <version>${Wagon_dependency_jar}</version>
-            </extension>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-http</artifactId>
-                <version>${Wagon_dependency_jar}</version>
-            </extension>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-scm</artifactId>
-                <version>${Wagon_dependency_jar}</version>
-            </extension>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-ssh</artifactId>
-                <version>${Wagon_dependency_jar}</version>
-            </extension>
-            <extension>
-                <groupId>org.apache.maven.wagon</groupId>
-                <artifactId>wagon-webdav-jackrabbit</artifactId>
-                <version>${Wagon_dependency_jar}</version>
-            </extension-->
-        </extensions>
     </build>
 
     <reporting>
@@ -2406,7 +2376,7 @@
             <organizationUrl>http://www..ie</organizationUrl>
             <timezone>GMT</timezone>
             <roles>
-                <role>Senior Java Developer</role>
+                <role>developer</role>
             </roles>
         </developer>
     </developers>
@@ -2417,22 +2387,22 @@
     </organization>
 
     <issueManagement>
-        <system></system>
-        <url><![CDATA[]]></url>
+        <system>github</system>
+        <url><![CDATA[http://github.com/paulmoloney/top-level-parent-pom/issues]]></url>
     </issueManagement>
 
-    <!--licenses>
+    <licenses>
         <license>
-            <name></name>
-            <url><![]]></url>
+            <name>Apache 2.0</name>
+            <url><![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]></url>
             <distribution>repo</distribution>
-            <comments><![CDATA[]]></comments>
+            <comments><![CDATA[http://www.apache.org/licenses/LICENSE-2.0]]></comments>
         </license>
-    </licenses-->
+    </licenses>
 
     <ciManagement>
         <system>Jenkins</system>
-        <url></url>
+        <url>${Jenkins_url}</url>
         <notifiers>
             <notifier>
                 <type>mail</type>
@@ -2460,11 +2430,17 @@
         </mailingList>
     <mailingLists-->
 
+    <scm>
+        <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
+        <developerConnection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</developerConnection>
+        <url>scm:git:git://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
+    </scm>
+    
     <distributionManagement>
         <site>
             <id>site</id>
-            <!-- ${project-groupId} as nested folder -->
-        <url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url>
+            <!--url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url-->
+            <url>gitsite:git://github.com/paulmoloney/top-level-parent-pom.git</url>
         </site>
         <repository>
             <id>releases</id>
