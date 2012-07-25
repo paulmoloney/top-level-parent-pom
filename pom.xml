@@ -277,7 +277,7 @@
 
         <jdkName>${jdk6Name}</jdkName>
         <minJdk>${java_lang_level}.0-30</minJdk>
-        <maxJdk>1.6</maxJdk>
+        <maxJdk>1.7.0-01</maxJdk>
         <requireJavaVersion>[${minJdk},${maxJdk})</requireJavaVersion>
         <jdkToolChainVersion>${java_lang_level}</jdkToolChainVersion>
         <!-- toolchains.xml -->
