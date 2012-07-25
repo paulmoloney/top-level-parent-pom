@@ -9,7 +9,7 @@
     
     <groupId>ie.pmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.2-SNAPSHOT</version>
+    <version>1.0.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
@@ -2463,14 +2463,14 @@
             <!--url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url-->
             <url>gitsite:git://github.com/paulmoloney/top-level-parent-pom.git</url>
         </site>
-        <repository>
+        <!--repository>
             <id>releases</id>
             <url>${distro_release_url}</url>
         </repository>
         <snapshotRepository>
             <id>snapshots</id>
             <url>${distro_snapshot_url}</url>
-        </snapshotRepository>
+        </snapshotRepository-->
     </distributionManagement>
 
     <profiles>
