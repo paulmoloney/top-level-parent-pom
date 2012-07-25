@@ -2459,7 +2459,7 @@
     
     <distributionManagement>
         <site>
-            <id>site</id>
+            <id>gitsite</id>
             <!--url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url-->
             <url>gitsite:git:@github.com/paulmoloney/top-level-parent-pom.git</url>
         </site>
