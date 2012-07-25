@@ -2083,10 +2083,14 @@
                                     <allowedRepositories>
                                         <allowedRepository>releases</allowedRepository>
                                         <allowedRepository>snapshots</allowedRepository>
+                                        <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
+                                        <allowedRepository>sonatype-nexus-staging</allowedRepository>
                                     </allowedRepositories>
                                     <allowedPluginRepositories>
                                         <allowedPluginRepository>releases</allowedPluginRepository>
                                         <allowedPluginRepository>snapshots</allowedPluginRepository>
+                                        <allowedRepository>sonatype-nexus-staging</allowedRepository>
+                                        <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
                                     </allowedPluginRepositories>
                                 </requireNoRepositories>
                                 <requireProperty>
