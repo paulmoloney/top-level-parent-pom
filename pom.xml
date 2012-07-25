@@ -9,7 +9,7 @@
     
     <groupId>ie.pmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.1-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
