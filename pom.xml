@@ -2453,15 +2453,15 @@
 
     <scm>
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
-        <developerConnection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</developerConnection>
-        <url>scm:git:git://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
+        <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
+        <url>http://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
     </scm>
     
     <distributionManagement>
         <site>
             <id>site</id>
             <!--url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url-->
-            <url>gitsite:git://github.com/paulmoloney/top-level-parent-pom.git</url>
+            <url>gitsite:git:@github.com/paulmoloney/top-level-parent-pom.git</url>
         </site>
         <repository>
             <id>releases</id>
