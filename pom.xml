@@ -9,7 +9,7 @@
     
     <groupId>ie.pmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.2-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
@@ -30,7 +30,7 @@
         
         <site_deploy_url>gitsite:git@github.com/</site_deploy_url>
         <system_path_seperator>:</system_path_seperator>
-        <executable_ext />
+        <executable_ext></executable_ext>
         <shell_ext>sh</shell_ext>
         <dynamic_library_ext>so</dynamic_library_ext>
         <static_library_ext>a</static_library_ext>
@@ -325,7 +325,7 @@
         <releaseProfiles>release-profile,me-release-profile</releaseProfiles>
         <pushChanges>true</pushChanges> <!-- false for git or similar dscm -->
         <localCheckout>false</localCheckout> <!-- true for git or similar dscm -->
-        <completionGoals />
+        <completionGoals></completionGoals>
         <goals>deploy</goals>
         <preparationGoals>clean verify</preparationGoals>
         <me_cobertura_pattern>ie.*</me_cobertura_pattern>
@@ -2393,7 +2393,7 @@
             <name>Paul Moloney</name>
             <email>paul.moloney@me.ie</email>
             <url>http://www..ie</url>
-            <organization />
+            <organization></organization>
             <organizationUrl>http://www..ie</organizationUrl>
             <timezone>GMT</timezone>
             <roles>
@@ -2403,7 +2403,7 @@
     </developers>
 
     <organization>
-        <name />
+        <name></name>
         <url>http://www..ie</url>
     </organization>
 
@@ -2432,7 +2432,7 @@
                 <sendOnSuccess>false</sendOnSuccess>
                 <sendOnWarning>false</sendOnWarning>
                 <configuration>
-                    <address />
+                    <address></address>
                 </configuration>
             </notifier>
         </notifiers>
@@ -2455,8 +2455,7 @@
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
         <url>scm:git:git://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
-      <tag>HEAD</tag>
-  </scm>
+    </scm>
     
     <distributionManagement>
         <site>
