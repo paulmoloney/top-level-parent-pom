@@ -9,7 +9,7 @@
     
     <groupId>com.github.paulmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.3-SNAPSHOT</version>
+    <version>1.0.3</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
@@ -30,7 +30,7 @@
         
         <site_deploy_url>gitsite:git@github.com/</site_deploy_url>
         <system_path_seperator>:</system_path_seperator>
-        <executable_ext></executable_ext>
+        <executable_ext />
         <shell_ext>sh</shell_ext>
         <dynamic_library_ext>so</dynamic_library_ext>
         <static_library_ext>a</static_library_ext>
@@ -325,7 +325,7 @@
         <releaseProfiles>release-profile,me-release-profile </releaseProfiles>
         <pushChanges>false</pushChanges> <!-- false for git or similar dscm -->
         <localCheckout>true</localCheckout> <!-- true for git or similar dscm -->
-        <completionGoals></completionGoals>
+        <completionGoals />
         <goals>deploy</goals>
         <preparationGoals>clean verify</preparationGoals>
         <me_cobertura_pattern>ie.*</me_cobertura_pattern>
@@ -2391,10 +2391,10 @@
         <developer>
             <id>moloneyp</id>
             <name>Paul Moloney</name>
-            <email></email>
-            <url></url>
-            <organization></organization>
-            <organizationUrl></organizationUrl>
+            <email />
+            <url />
+            <organization />
+            <organizationUrl />
             <timezone>GMT</timezone>
             <roles>
                 <role>developer</role>
@@ -2403,8 +2403,8 @@
     </developers>
 
     <organization>
-        <name></name>
-        <url></url>
+        <name />
+        <url />
     </organization>
 
     <issueManagement>
@@ -2432,7 +2432,7 @@
                 <sendOnSuccess>false</sendOnSuccess>
                 <sendOnWarning>false</sendOnWarning>
                 <configuration>
-                    <address></address>
+                    <address />
                 </configuration>
             </notifier>
         </notifiers>
@@ -2455,7 +2455,8 @@
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
         <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
-    </scm>
+      <tag>top-level-parent-pom-1.0.3</tag>
+  </scm>
     
     <distributionManagement>
         <site>
