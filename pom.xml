@@ -9,7 +9,7 @@
     
     <groupId>com.github.paulmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.4</version>
+    <version>1.0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
@@ -2455,7 +2455,7 @@
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
         <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
-      <tag>top-level-parent-pom-1.0.4</tag>
+      <tag>top-level-parent-pom-1.0.3</tag>
   </scm>
     
     <distributionManagement>
