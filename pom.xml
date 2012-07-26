@@ -9,7 +9,7 @@
     
     <groupId>com.github.paulmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.3</version>
+    <version>1.0.4-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
