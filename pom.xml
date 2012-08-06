@@ -24,18 +24,13 @@
         <sonar.host.url>http://localhost/sonar</sonar.host.url>
         <Sonar_plugin_version>3.1.1</Sonar_plugin_version>
         <versions_xml_url>http://localhost</versions_xml_url>
-        <Jenkins_url>http://localhost/jenkins</Jenkins_url-->                
+        <Jenkins_url>http://localhost/jenkins</Jenkins_url
+        <sonar.execute>true</sonar.execute-->                
         <!--siteGroupId>${groupId.replaceAll('.','/')}</siteGroupId-->
-        <!--siteGroupId>ie/pmoloney</siteGroupId-->
+        <!--siteGroupId>ie/pmoloney</siteGroupId-->		
+                        
+        <site_deploy_url>gitsite:git://github.com/paulmoloney</site_deploy_url>
         
-        <site_deploy_url>gitsite:git@github.com/</site_deploy_url>
-        <system_path_seperator>:</system_path_seperator>
-        <executable_ext />
-        <shell_ext>sh</shell_ext>
-        <dynamic_library_ext>so</dynamic_library_ext>
-        <static_library_ext>a</static_library_ext>
-        <installer_ext>rpm</installer_ext>
-        <java_lang_level>1.6</java_lang_level>
         <maven.compiler.source>${java_lang_level}</maven.compiler.source>
         <maven.compiler.testSource>${java_lang_level}</maven.compiler.testSource>
         <maven.compiler.target>${java_lang_level}</maven.compiler.target>
@@ -57,7 +52,6 @@
         <project.reporting.outputEncoding>${file_encoding}</project.reporting.outputEncoding>
         <outputEncoding>${file_encoding}</outputEncoding>
 
-        <project_animal_java_sniffer_source_level>java16</project_animal_java_sniffer_source_level>
         <project_animal_java_sniffer_source_version>1.0</project_animal_java_sniffer_source_version>
 
         <project_animal_sniffer_rule_plugin_version>${AnimalSniffer_plugin_version}</project_animal_sniffer_rule_plugin_version>
@@ -86,16 +80,16 @@
         <Antlr3_plugin_version>1.0</Antlr3_plugin_version>
         <Antlr3_antlr_plugin_version>3.4</Antlr3_antlr_plugin_version>
         <Appassembler_plugin_version>1.2.2</Appassembler_plugin_version>
-        <Apt_plugin_version>1.0-alpha-4</Apt_plugin_version>
+        <Apt_plugin_version>1.0-alpha-5</Apt_plugin_version>
         <Archetype_plugin_version>2.2</Archetype_plugin_version>
         <ArgoUml_plugin_version>1.0-SNAPSHOT</ArgoUml_plugin_version>
         <AspectJ_plugin_version>1.4</AspectJ_plugin_version>
         <Assembly_plugin_version>2.3</Assembly_plugin_version>
         <AxisTools_plugin_version>1.4</AxisTools_plugin_version>
-        <Axis2_plugin_version>1.6.1</Axis2_plugin_version>
+        <Axis2_plugin_version>1.6.2</Axis2_plugin_version>
         <BuildHelper_plugin_version>1.7</BuildHelper_plugin_version>
         <BuildNumber_plugin_version>1.1</BuildNumber_plugin_version>
-        <Cargo_plugin_version>1.1.1</Cargo_plugin_version>
+        <Cargo_plugin_version>1.2.3</Cargo_plugin_version>
         <Castor_plugin_version>2.1</Castor_plugin_version>
         <Changes_plugin_version>2.7.1</Changes_plugin_version>
         <CheckStyle_plugin_version>2.9.1</CheckStyle_plugin_version>
@@ -108,12 +102,12 @@
         <Cobertura_plugin_version>2.5.1</Cobertura_plugin_version>
         <Cobertura4It_plugin_version>1.0</Cobertura4It_plugin_version>
         <Compiler_plugin_version>2.5.1</Compiler_plugin_version>
-        <Cxf_plugin_version>2.4.1</Cxf_plugin_version>
+        <Cxf_plugin_version>2.6.1</Cxf_plugin_version>
         <DashBoard_plugin_version>1.0.0-beta-1</DashBoard_plugin_version>
         <Db_plugin_version>1.2-SNAPSHOT</Db_plugin_version>
         <DbUnit_plugin_version>1.0-beta-3</DbUnit_plugin_version>
-        <DbUpgrade_plugin_version>1.0-beta-1</DbUpgrade_plugin_version>
-        <Dependency_plugin_version>2.4</Dependency_plugin_version>
+        <DbUpgrade_plugin_version>1.0-beta-2</DbUpgrade_plugin_version>
+        <Dependency_plugin_version>2.5</Dependency_plugin_version>
         <Deploy_plugin_version>2.7</Deploy_plugin_version>
         <Doxygen_plugin_version>1.0.1</Doxygen_plugin_version>
         <DoxygenDoodle_plugin_version>2.2</DoxygenDoodle_plugin_version>
@@ -127,52 +121,53 @@
         <Enforcer_extra_rules_version>1.0-alpha-3</Enforcer_extra_rules_version>
         <Exec_plugin_version>1.2.1</Exec_plugin_version>
         <FailSafe_plugin_version>${SureFire_plugin_version}</FailSafe_plugin_version>
-        <FelixBundle_plugin_version>2.3.4</FelixBundle_plugin_version>
-        <FelixScr_plugin_version>1.7.2</FelixScr_plugin_version>
-        <FindBugs_plugin_version>2.4.0</FindBugs_plugin_version>
+        <FelixBundle_plugin_version>2.3.7</FelixBundle_plugin_version>
+        <FelixScr_plugin_version>1.7.4</FelixScr_plugin_version>
+        <FindBugs_plugin_version>2.5.2</FindBugs_plugin_version>
         <Gpg_plugin_version>1.4</Gpg_plugin_version>
         <GMaven_plugin_version>1.4</GMaven_plugin_version>
         <Goldin_plugin_version>0.2.5</Goldin_plugin_version>
-        <Grails_plugin_version>2.1.0.RC2</Grails_plugin_version>
-        <Gwt_plugin_version>2.3.0-1</Gwt_plugin_version>
-        <Hibernate3_plugin_version>2.2</Hibernate3_plugin_version>
+        <Grails_plugin_version>2.1.0</Grails_plugin_version>
+        <Gwt_plugin_version>2.5.0-rc1</Gwt_plugin_version>
+        <Hibernate3_plugin_version>3.0</Hibernate3_plugin_version>
         <Help_plugin_version>2.1.1</Help_plugin_version>
         <Ianal_plugin_version>1.0-alpha-1</Ianal_plugin_version>
         <Invoker_plugin_version>1.6</Invoker_plugin_version>
         <Install_plugin_version>2.3.1</Install_plugin_version>
         <Jar_plugin_version>2.4</Jar_plugin_version>
-        <JarJar_plugin_version>1.4</JarJar_plugin_version>
+        <JarJar_plugin_version>1.5</JarJar_plugin_version>
         <JarSigner_plugin_version>1.2</JarSigner_plugin_version>
-        <Jasmine_plugin_version>1.1.0</Jasmine_plugin_version>
+        <Jasmine_plugin_version>1.2.0</Jasmine_plugin_version>
         <JavaDoc_plugin_version>2.8.1</JavaDoc_plugin_version>
         <JavaNcss_plugin_version>2.0</JavaNcss_plugin_version>
         <JavaProcessor_plugin_version>1.0</JavaProcessor_plugin_version>
+        <Jawr_plugin_version>1.4.2</Jawr_plugin_version>
         <Jaxb_plugin_version>1.1.1</Jaxb_plugin_version>
         <Jaxb2_plugin_version>1.4</Jaxb2_plugin_version>
         <Jaxws_plugin_version>1.12</Jaxws_plugin_version>
         <JDepend_plugin_version>2.0-beta-2</JDepend_plugin_version>
         <Jetty6_plugin_version>6.1.26</Jetty6_plugin_version>
-        <Jetty_plugin_version>8.1.1.v20120215</Jetty_plugin_version>
-        <JsImport_plugin_version>1.0.0</JsImport_plugin_version>
+        <Jetty_plugin_version>8.1.5.v20120716</Jetty_plugin_version>
+        <JsImport_plugin_version>1.0.1</JsImport_plugin_version>
         <JsTools_plugin_version>0.7</JsTools_plugin_version>
-        <JvNet_Jaxb2_plugin_version>0.8.1</JvNet_Jaxb2_plugin_version>
+        <JvNet_Jaxb2_plugin_version>0.8.2</JvNet_Jaxb2_plugin_version>
         <Jxr_plugin_version>2.3</Jxr_plugin_version>
-        <KeyTool_plugin_version>1.0</KeyTool_plugin_version>
+        <KeyTool_plugin_version>1.2</KeyTool_plugin_version>
         <LessCss_plugin_version>1.0-beta-3</LessCss_plugin_version>
-        <License_plugin_version>1.1</License_plugin_version>
+        <License_plugin_version>1.2</License_plugin_version>
         <LicenseVerifier_plugin_version>0.4</LicenseVerifier_plugin_version>
         <LiveCycleMapping_plugin_version>1.0.0</LiveCycleMapping_plugin_version>
         <MockRepository_plugin_version>1.0-alpha-1-SNAPSHOT</MockRepository_plugin_version>
         <Mrm_plugin_version>1.0-alpha-1</Mrm_plugin_version>
-        <Mule_plugin_version>1.7</Mule_plugin_version>
+        <Mule_plugin_version>1.8</Mule_plugin_version>
         <Mvnsh_plugin_version>1.0.1</Mvnsh_plugin_version>
-        <Native2Ascii_plugin_version>1.0-alpha-1</Native2Ascii_plugin_version>
+        <Native2Ascii_plugin_version>1.0-beta-1</Native2Ascii_plugin_version>
         <Pdf_plugin_version>1.1</Pdf_plugin_version>
         <Plugin_plugin_version>3.1</Plugin_plugin_version>
         <Pmd_plugin_version>2.7.1</Pmd_plugin_version>
         <Processor_plugin_version>2.0.5</Processor_plugin_version>
         <Properties_plugin_version>1.0-alpha-2</Properties_plugin_version>
-        <ProjectInfoReports_plugin_version>2.4</ProjectInfoReports_plugin_version>
+        <ProjectInfoReports_plugin_version>2.5</ProjectInfoReports_plugin_version>
         <Reactor_plugin_version>1.0</Reactor_plugin_version>
         <Release_plugin_version>2.3.2</Release_plugin_version>
         <RemoteResources_plugin_version>1.3</RemoteResources_plugin_version>
@@ -182,7 +177,7 @@
         <Scala_plugin_version>2.15.2</Scala_plugin_version>
         <Schemagen_plugin_version>1.2</Schemagen_plugin_version>
         <Scm_plugin_version>1.7</Scm_plugin_version>
-        <Selenium_plugin_version>2.0</Selenium_plugin_version>
+        <Selenium_plugin_version>2.3</Selenium_plugin_version>
         <ServiceMix_checksum_plugin_version>1.1</ServiceMix_checksum_plugin_version>
         <SetUp_plugin_version>1.0.0-alpha-1-SNAPSHOT</SetUp_plugin_version>
         <Shade_plugin_version>1.7.1</Shade_plugin_version>
@@ -198,7 +193,7 @@
         <Sonar_Emma1_plugin_version>0.2</Sonar_Emma1_plugin_version>
         <Sonar_Emma2_plugin_version>1.1</Sonar_Emma2_plugin_version>
         <Sonar_GreenPepper_plugin_version>0.2</Sonar_GreenPepper_plugin_version>
-        <Sonar_PdfReport_plugin_version>1.2</Sonar_PdfReport_plugin_version>
+        <Sonar_PdfReport_plugin_version>1.3</Sonar_PdfReport_plugin_version>
         <Sonar_QualityIndex_plugin_version>1.1.2</Sonar_QualityIndex_plugin_version>
         <Sonar_Report_plugin_version>0.1</Sonar_Report_plugin_version>
         <Sonar_Radiator_plugin_version>1.0.1</Sonar_Radiator_plugin_version>
@@ -212,7 +207,7 @@
         <SonarBootStrap_plugin_version>2.0</SonarBootStrap_plugin_version>
         <Source_plugin_version>2.1.2</Source_plugin_version>
         <Sql_plugin_version>1.5</Sql_plugin_version>
-        <SureFire_plugin_version>2.12</SureFire_plugin_version>
+        <SureFire_plugin_version>2.12.1</SureFire_plugin_version>
         <SureFireReport_plugin_version>${SureFire_plugin_version}</SureFireReport_plugin_version>
         <SvnRevisionNumber_plugin_version>1.7</SvnRevisionNumber_plugin_version>
         <TagList_plugin_version>2.4</TagList_plugin_version>
@@ -224,13 +219,14 @@
         <Verifier_library_version>1.3</Verifier_library_version> <!--org.apache.maven.shared:maven-verifier, use as test dependency -->
         <Versions_plugin_version>1.3.1</Versions_plugin_version>
         <Wagon_plugin_version>1.0-beta-4</Wagon_plugin_version>
-        <Webminifier_plugin_version>1.0.0</Webminifier_plugin_version>
+        <Webminifier_plugin_version>1.0.1</Webminifier_plugin_version>
         <War_plugin_version>2.2</War_plugin_version>
         <Was_plugin_version>1.2</Was_plugin_version>
         <Webservices-tools_plugin_version>2.1-b16</Webservices-tools_plugin_version>
+        <Wro4j_plugin_version>1.4.7</Wro4j_plugin_version>
         <Xjc_plugin_version>1.1.1</Xjc_plugin_version>
         <XmlBean_plugin_version>2.3.3</XmlBean_plugin_version>
-        <YuiCompressor_plugin_version>1.3.0</YuiCompressor_plugin_version>
+        <YuiCompressor_plugin_version>1.3.0</YuiCompressor_plugin_version>       
 
         <skipTests>false</skipTests> <!-- ignore tests totally including compilation -->
         <testFailureIgnore>false</testFailureIgnore>
@@ -259,8 +255,6 @@
         <dependencyLocationsEnabled>false</dependencyLocationsEnabled>
         <dependencyDetailsEnabled>false</dependencyDetailsEnabled>
 
-        <minMaven>3.0.4</minMaven>
-        <maxMaven>3.1</maxMaven>
         <requireMavenVersion>[${minMaven},${maxMaven})</requireMavenVersion>
         <requirePropertyProjectVersion>^(\d+\.\d+\.\d+)(\-ME\-(\d{3}))?(\-SNAPSHOT)?$</requirePropertyProjectVersion>
         <requirePluginVersionsBanLatest>true</requirePluginVersionsBanLatest>
@@ -277,9 +271,6 @@
         <jdk8Name>JavaSE-1.8</jdk8Name>
         <jdk9Name>JavaSE-1.9</jdk9Name>
 
-        <jdkName>${jdk6Name}</jdkName>
-        <minJdk>${java_lang_level}.0-30</minJdk>
-        <maxJdk>1.7.0-01</maxJdk>
         <requireJavaVersion>[${minJdk},${maxJdk})</requireJavaVersion>
         <jdkToolChainVersion>${java_lang_level}</jdkToolChainVersion>
         <!-- toolchains.xml -->
@@ -313,22 +304,23 @@
 
         <javaDocHeader><![CDATA[<b>${project.name} ${project.version}</b>]]></javaDocHeader>
         <javaDocFooter><![CDATA[<b>${project.name} ${project.version}</b>]]></javaDocFooter>
-        <javaDocTitle><![CDATA[ME ${project.artifactId} ${project.version}]]></javaDocTitle>
-        <javaDocWindowTitle><![CDATA[ME ${project.artifactId} ${project.version}]]></javaDocWindowTitle>
-        <javaDocBottom><![CDATA[Copyright &#38;copy;${project.inceptionYear}-{currentYear} <a href="http://me.ie">ME</a>All Rights Reserved]]></javaDocBottom>
+        <javaDocTitle><![CDATA[${project.artifactId} ${project.version}]]></javaDocTitle>
+        <javaDocWindowTitle><![CDATA[${project.artifactId} ${project.version}]]></javaDocWindowTitle>
+        <javaDocBottom><![CDATA[Copyright &#38;copy;${project.inceptionYear}-{currentYear} <a href="http://github.com/paulmoloney">Paul Moloney</a>All Rights Reserved]]></javaDocBottom>
 
         <gpg.skip>true</gpg.skip>
         <gpg.useagent>true</gpg.useagent>
         <mavenExecutorId>invoker</mavenExecutorId> <!-- forked-path if start using gpg -->
         <arguments>-Dmaven.test.skip.exec=true</arguments>
         <useReleaseProfile>true</useReleaseProfile>
-        <releaseProfiles>release-profile,me-release-profile </releaseProfiles>
+        <releaseProfiles>release-profile,me-release-profile</releaseProfiles>
         <pushChanges>false</pushChanges> <!-- false for git or similar dscm -->
         <localCheckout>true</localCheckout> <!-- true for git or similar dscm -->
         <completionGoals />
-        <goals>deploy</goals>
+        <goals>site-deploy</goals>
         <preparationGoals>clean verify</preparationGoals>
-        <me_cobertura_pattern>ie.*</me_cobertura_pattern>
+        <me_cobertura_pattern>ie.paulmoloney.*</me_cobertura_pattern>
+        <me_cobertura_pattern2>com.github.paulmoloney.*</me_cobertura_pattern2>
     </properties>
 
     <prerequisites>
@@ -394,6 +386,26 @@
                 <directory>${project.basedir}/src/main/resources/filtered</directory>
                 <filtering>true</filtering>
             </resource>
+            <!--resource>
+                <directory>${project.basedir}/src/main/resources/i18n</directory>
+                <filtering>false</filtering>
+            </resource>            
+            <resource>
+                <directory>${project.basedir}/src/main/resources/i10n</directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/i18n</directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/i10n</directory>
+                <filtering>false</filtering>
+            </resource>
+            <resource>
+                <directory>${project.basedir}/src/main/locale</directory>
+                <filtering>false</filtering>
+            </resource-->            
         </resources>
         <testResources>
             <testResource>
@@ -1239,6 +1251,11 @@
                                     <branchRate>${cobertura_branchRate}</branchRate>
                                     <lineRate>${cobertura_lineRate}</lineRate>
                                 </regex>
+                                <regex>
+                                    <pattern>${me_cobertura_pattern2}</pattern>
+                                    <branchRate>${cobertura_branchRate}</branchRate>
+                                    <lineRate>${cobertura_lineRate}</lineRate>
+                                </regex>                                
                             </regexes>
                       </check>
                       <formats>
@@ -1429,6 +1446,24 @@
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>native2ascii-maven-plugin</artifactId>
                     <version>${Native2Ascii_plugin_version}</version>
+                    <!--configuration>
+                        <dest>target/classes</dest>
+                        <src>src/main/resources/i18n</src>
+                    </configuration-->
+                    <executions>
+                        <execution>
+                            <id>native2ascii-utf8</id>
+                            <goals>
+                                <goal>native2ascii</goal>
+                            </goals>
+                            <configuration>
+                                <encoding>UTF8</encoding>
+                                <includes>*.properties</includes>
+                                <dest>target/classes</dest>
+                                <src>src/main/locale</src>                                
+                            </configuration>
+                        </execution>
+                    </executions>                    
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -1661,7 +1696,7 @@
                     <artifactId>versions-maven-plugin</artifactId>
                     <version>${Versions_plugin_version}</version>
                     <configuration>
-                        <rulesUri>${versions_xml_url}maven-version-rules.xml</rulesUri>
+                        <rulesUri>${versions_xml_url}/maven-version-rules.xml</rulesUri>
                     </configuration>
                 </plugin>
                 <plugin>
@@ -2032,7 +2067,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>${Compiler_plugin_version}</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <testSource>${maven.compiler.testSource}</testSource>
@@ -2049,12 +2083,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-toolchains-plugin</artifactId>
-                <version>${ToolChains_plugin_version}</version>
-            </plugin>
+                </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <version>${Enforcer_plugin_version}</version>
                 <dependencies>
                     <dependency>
                         <groupId>org.codehaus.mojo</groupId>
@@ -2165,7 +2197,6 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
-                <version>${Release_plugin_version}</version>
                 <configuration>
                     <mavenExecutorId>${mavenExecutorId}</mavenExecutorId>
                     <pushChanges>${pushChanges}</pushChanges>
@@ -2182,6 +2213,20 @@
             </plugin>
             <!-- codehaus, keep in alphabetical order or by phase -->
             <!-- google code hosted, keep in alphabetical order or by phase  -->
+            
+            <plugin>
+                <groupId>ro.isdc.wro4j</groupId>
+                <artifactId>wro4j-maven-plugin</artifactId>
+                <version>${Wro4j_plugin_version}</version>
+                <configuration>
+                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>net.jawr</groupId>
+                <artifactId>maven-jawr-plugin</artifactId>
+                <version>${Jawr_plugin_version}</version>
+            </plugin>
         </plugins>
     </build>
 
@@ -2462,7 +2507,7 @@
         <site>
             <id>site</id>
             <!--url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url-->
-            <url>gitsite:git://github.com/paulmoloney/top-level-parent-pom.git</url>
+            <url>${site_deploy_url}/top-level-parent-pom.git</url>
         </site>
         <!--repository>
             <id>releases</id>
@@ -2477,12 +2522,17 @@
     <profiles>
         <profile>
             <id>sonar</id>
+            <activation>
+                <property>
+                    <name>sonar_execute</name>
+                    <value>true</value>
+                </property>
+            </activation>
             <build>
                 <plugins>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>sonar-maven-plugin</artifactId>
-                        <version>${SonarBootStrap_plugin_version}</version>
                     </plugin>
                 </plugins>
             </build>
@@ -2682,6 +2732,13 @@
             </dependencies>
         </profile>
 
+		<profile>
+		    <id>maven-2</id>
+		    <properties>
+                <minMaven>2.2.1</minMaven>
+                <maxMaven>3.0.1</maxMaven>
+		    </properties>
+		</profile>
         <profile>
           <id>maven-3</id>
           <activation>
@@ -2691,13 +2748,13 @@
             </file>
           </activation>
 
-          <!--properties>
-                <Site_plugin_version>3.1</Site_plugin_version>
-                <SonarBootStrap_plugin_version>2.0</SonarBootStrap_plugin_version>
+          <properties>
+                <!--Site_plugin_version>3.1</Site_plugin_version>
+                <SonarBootStrap_plugin_version>2.0</SonarBootStrap_plugin_version-->
                 <minMaven>3.0.4</minMaven>
                 <maxMaven>3.1</maxMaven>
-                <requireMavenVersion>[${minMaven},${maxMaven})</requireMavenVersion>
-          </properties-->
+                <!--requireMavenVersion>[${minMaven},${maxMaven})</requireMavenVersion-->
+          </properties>
 
         <build>
             <pluginManagement>
@@ -2761,7 +2818,6 @@
                 <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
-                <version>${Site_plugin_version}</version>
                 <executions>
                     <execution>
                         <id>attach-descriptor</id>
@@ -2870,14 +2926,10 @@
                                     <requireNoRepositories>
                                         <message>${internalRepositoryMessage}</message>
                                         <allowedRepositories>
-                                            <allowedRepository>releases</allowedRepository>
-                                            <allowedRepository>snapshots</allowedRepository>
                                             <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
                                             <allowedRepository>sonatype-nexus-staging</allowedRepository>
                                         </allowedRepositories>
                                         <allowedPluginRepositories>
-                                            <allowedPluginRepository>releases</allowedPluginRepository>
-                                            <allowedPluginRepository>snapshots</allowedPluginRepository>
                                             <allowedRepository>sonatype-nexus-staging</allowedRepository>
                                             <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
                                         </allowedPluginRepositories>
@@ -3076,6 +3128,13 @@
 			    </os>
 			</activation>
 			<properties>
+                <system_path_seperator>:</system_path_seperator>
+                <executable_ext />
+                <shell_ext>sh</shell_ext>
+                <dynamic_library_ext>so</dynamic_library_ext>
+                <static_library_ext>a</static_library_ext>
+                <installer_ext>rpm</installer_ext>
+                <archive_ext>tar.bz2</archive_ext>			
 			</properties>
 		</profile>
 		<profile>
@@ -3086,12 +3145,13 @@
 			    </os>
 			</activation>
 			<properties>
-			    <system_path_seperator>:</system_path_seperator>
+			    <system_path_seperator>;</system_path_seperator>
 				<executable_ext>exe</executable_ext>
 				<shell_ext>bat</shell_ext>
 				<dynamic_library_ext>dll</dynamic_library_ext>
 				<static_library_ext>lib</static_library_ext>
 				<installer_ext>msi</installer_ext>
+				<archive_ext>zip</archive_ext>
 			</properties>
 		</profile>
 		<profile>
@@ -3101,6 +3161,77 @@
 				    <family>mac</family>
 			    </os>
 			</activation>
+			<properties>
+			</properties>
 		</profile>
+		<profile>
+		    <id>java-5</id>
+		    <activation>
+		        <!--property>
+		            <name>java</name>
+		            <value>5</value>
+		        </property-->
+		        <jdk>[1.5,)</jdk>
+		    </activation>	    
+		    <properties>
+                <java_lang_level>1.5</java_lang_level>
+                <jdkName>${jdk5Name}</jdkName>
+                <minJdk>${java_lang_level}.0-22</minJdk>
+                <maxJdk>1.6.0-01</maxJdk>
+                <project_animal_java_sniffer_source_level>java15</project_animal_java_sniffer_source_level>                
+		    </properties>
+		</profile>		
+		<profile>
+		    <id>java-6</id>
+		    <!--activation>
+		        <property>
+		            <name>java</name>
+		            <value>6</value>
+		        </property>		    
+		        <jdk>[1.6,)</jdk>
+		    </activation-->		    
+		    <properties>
+                <java_lang_level>1.6</java_lang_level>
+                <jdkName>${jdk6Name}</jdkName>
+                <minJdk>${java_lang_level}.0-30</minJdk>
+                <maxJdk>1.7.0-01</maxJdk>
+                <project_animal_java_sniffer_source_level>java16</project_animal_java_sniffer_source_level>                
+		    </properties>
+		</profile>
+		<profile>
+		    <id>java-7</id>
+		    <!--activation>
+		        <property>
+		            <name>java</name>
+		            <value>7</value>
+		        </property>		    
+		        <jdk>[1.7,)</jdk>
+		    </activation-->		    
+		    <properties>
+                <java_lang_level>1.7</java_lang_level>
+                <jdkName>${jdk7Name}</jdkName>
+                <minJdk>${java_lang_level}.0-05</minJdk>
+                <maxJdk>1.8.0-01</maxJdk>
+                <project_animal_java_sniffer_source_level>java17</project_animal_java_sniffer_source_level>
+		    </properties>
+		</profile>
+		<profile>
+		    <id>java-8</id>
+		    <!--activation>
+		        <property>
+		            <name>java</name>
+		            <value>8</value>
+		        </property>		    
+		        <jdk>[1.8,)</jdk>
+		    </activation-->		    
+		    <properties>
+                <java_lang_level>1.8</java_lang_level>
+                <jdkName>${jdk8Name}</jdkName>
+                <minJdk>${java_lang_level}.0-01</minJdk>
+                <maxJdk>1.9.0-01</maxJdk>
+                <project_animal_java_sniffer_source_level>java18</project_animal_java_sniffer_source_level>
+		    </properties>
+		</profile>		
     </profiles>
 </project>
+
