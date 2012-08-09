@@ -29,7 +29,7 @@ under the License.
     
     <groupId>com.github.paulmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.5-SNAPSHOT</version>
+    <version>1.0.5</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
@@ -44,8 +44,7 @@ under the License.
         <sonar.host.url>http://localhost/sonar</sonar.host.url>
         <Sonar_plugin_version>3.1.1</Sonar_plugin_version>
         <versions_xml_url>http://localhost</versions_xml_url>
-        <Jenkins_url>http://localhost/jenkins</Jenkins_url
-        <sonar.execute>true</sonar.execute-->                
+        <Jenkins_url>http://localhost/jenkins</Jenkins_url <sonar.execute>true</sonar.execute-->                
         <!--siteGroupId>${groupId.replaceAll('.','/')}</siteGroupId-->
         <!--siteGroupId>ie/pmoloney</siteGroupId-->		
                         
@@ -2599,6 +2598,7 @@ under the License.
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
         <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
+    <tag>top-level-parent-pom-1.0.5</tag>
   </scm>
     
     <distributionManagement>
