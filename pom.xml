@@ -378,6 +378,11 @@ under the License.
                 <version>${Wagon_dependency_jar}</version>
             </extension>
             <extension>
+                <groupId>org.apache.maven.wagon</groupId>
+                <artifactId>wagon-ssh-external</artifactId>
+                <version>${Wagon_dependency_jar}</version>
+            </extension>
+            <extension>
                 <groupId>org.apache.maven.scm</groupId>
                 <artifactId>maven-scm-provider-gitexe</artifactId>
                 <version>${Scm_plugin_version}</version>
@@ -1103,6 +1108,11 @@ under the License.
                             <artifactId>wagon-webdav-jackrabbit</artifactId>
                             <version>${Wagon_dependency_jar}</version>
                         </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-ssh-external</artifactId>
+                            <version>${Wagon_dependency_jar}</version>                        
+                        </dependency>
 			            <dependency>
 			                <groupId>org.apache.maven.scm</groupId>
 			                <artifactId>maven-scm-provider-gitexe</artifactId>
@@ -1528,11 +1538,11 @@ under the License.
                     <artifactId>license-maven-plugin</artifactId>
                     <version>${License_plugin_version}</version>
                 </plugin>
-                <plugin>
+                <!--plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>mock-repository-maven-plugin</artifactId>
                     <version>${MockRepository_plugin_version}</version>
-                </plugin>
+                </plugin-->
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>mrm-maven-plugin</artifactId>
@@ -1931,11 +1941,11 @@ under the License.
                    <artifactId>jasmine-maven-plugin</artifactId>
                    <version>${Jasmine_plugin_version}</version>
                 </plugin>
-                <plugin>
+                <!--plugin>
                     <groupId>com.googlecode</groupId>
                     <artifactId>maven-db-plugin</artifactId>
                     <version>${Db_plugin_version}</version>
-                </plugin>
+                </plugin-->
                 <plugin>
                     <groupId>com.google.code.maven-svn-revision-number-plugin</groupId>
                     <artifactId>maven-svn-revision-number-plugin</artifactId>
@@ -2170,6 +2180,8 @@ under the License.
                 </plugin>                
             </plugins>
         </pluginManagement>
+
+<!-- ####################################################################################################################### -->
 
         <plugins>
             <!-- apache core, keep in alphabetical order or by phase -->
@@ -2617,6 +2629,8 @@ under the License.
         </snapshotRepository-->
     </distributionManagement>
 
+<!-- ####################################################################################################################### -->
+
     <profiles>
         <profile>
             <id>sonar</id>
@@ -2739,7 +2753,6 @@ under the License.
                 </plugins>
             </build>
         </profile>
-
         <profile>
             <id>animal-sniffer</id>
             <build>
@@ -2830,7 +2843,6 @@ under the License.
               </dependency>
             </dependencies>
         </profile>
-
 		<profile>
 		    <id>maven-2</id>
 		    <properties>
@@ -2893,6 +2905,11 @@ under the License.
                             <artifactId>wagon-webdav-jackrabbit</artifactId>
                             <version>${Wagon_dependency_jar}</version>
                         </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.wagon</groupId>
+                            <artifactId>wagon-ssh-external</artifactId>
+                            <version>${Wagon_dependency_jar}</version>
+                        </dependency>                        
 			            <dependency>
 			                <groupId>org.apache.maven.scm</groupId>
 			                <artifactId>maven-scm-provider-gitexe</artifactId>
@@ -2917,6 +2934,58 @@ under the License.
                 <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-file</artifactId>
+                        <version>${Wagon_dependency_jar}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-ftp</artifactId>
+                        <version>${Wagon_dependency_jar}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-http</artifactId>
+                        <version>${Wagon_dependency_jar}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-scm</artifactId>
+                        <version>${Wagon_dependency_jar}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-ssh</artifactId>
+                        <version>${Wagon_dependency_jar}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-webdav-jackrabbit</artifactId>
+                        <version>${Wagon_dependency_jar}</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.wagon</groupId>
+                        <artifactId>wagon-ssh-external</artifactId>
+                        <version>${Wagon_dependency_jar}</version>
+                    </dependency>                        
+	                <dependency>
+	                    <groupId>org.apache.maven.scm</groupId>
+	                    <artifactId>maven-scm-provider-gitexe</artifactId>
+	                    <version>${Scm_plugin_version}</version>
+	                </dependency>
+	                <dependency>
+	                    <groupId>org.apache.maven.scm</groupId>
+	                    <artifactId>maven-scm-manager-plexus</artifactId>
+	                    <version>${Scm_plugin_version}</version>
+	                </dependency>
+	                <dependency>
+	                    <groupId>org.kathrynhuxtable.maven.wagon</groupId>
+	                    <artifactId>wagon-gitsite</artifactId>
+	                    <version>${WagonGitSite_dependency_jar}</version>
+	                </dependency>                        
+                </dependencies>
                 <executions>
                     <execution>
                         <id>attach-descriptor</id>
