@@ -1,6 +1,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+<!--
+Copyright 2010 Paul Moloney
+
+Licensed to the Apache Software Foundation (ASF) under one
+or more contributor license agreements.  See the NOTICE file
+distributed with this work for additional information
+regarding copyright ownership.  The ASF licenses this file
+to you under the Apache License, Version 2.0 (the
+"License"); you may not use this file except in compliance
+with the License.  You may obtain a copy of the License at
+
+  http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing,
+software distributed under the License is distributed on an
+"AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+KIND, either express or implied.  See the License for the
+specific language governing permissions and limitations
+under the License.
+-->
     <parent>
         <groupId>org.sonatype.oss</groupId>
         <artifactId>oss-parent</artifactId>
@@ -311,7 +331,6 @@
         <gpg.skip>true</gpg.skip>
         <gpg.useagent>true</gpg.useagent>
         <mavenExecutorId>invoker</mavenExecutorId> <!-- forked-path if start using gpg -->
-        <arguments>-Dmaven.test.skip.exec=true</arguments>
         <useReleaseProfile>true</useReleaseProfile>
         <releaseProfiles>release-profile,me-release-profile</releaseProfiles>
         <pushChanges>false</pushChanges> <!-- false for git or similar dscm -->
@@ -696,6 +715,84 @@
                             <version>${Enforcer_extra_rules_version}</version>
                         </dependency>
                     </dependencies>
+               <executions>
+                    <execution>
+                        <id>enforce-versions</id>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>display-info</goal>
+                            <goal>enforce</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <requireMavenVersion>
+                                    <version>${requireMavenVersion}</version>
+                                    <message>${requireMavenVersionMessage}</message>
+                                </requireMavenVersion>
+                                <requireJavaVersion>
+                                    <version>${requireJavaVersion}</version>
+                                    <message>${requireJavaVersionMessage}</message>
+                                </requireJavaVersion>
+                                <requirePluginVersions>
+                                    <message>${pluginVersionMessage}</message>
+                                    <banLatest>${requirePluginVersionsBanLatest}</banLatest>
+                                    <banRelease>${requirePluginVersionsBanRelease}</banRelease>
+                                    <banSnapshots>${requirePluginVersionsBanSnapshots}</banSnapshots>
+                                </requirePluginVersions>
+                                <requireReleaseDeps>
+                                    <message>${snapShotDependenciesMessage}</message>
+                                    <onlyWhenRelease>${requireReleaseDepsOnlyWhenRelease}</onlyWhenRelease>
+                                </requireReleaseDeps>
+                                <requireNoRepositories>
+                                <message>${internalRepositoryMessage}</message>
+                                    <allowedRepositories>
+                                        <allowedRepository>releases</allowedRepository>
+                                        <allowedRepository>snapshots</allowedRepository>
+                                        <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
+                                        <allowedRepository>sonatype-nexus-staging</allowedRepository>
+                                    </allowedRepositories>
+                                    <allowedPluginRepositories>
+                                        <allowedPluginRepository>releases</allowedPluginRepository>
+                                        <allowedPluginRepository>snapshots</allowedPluginRepository>
+                                        <allowedRepository>sonatype-nexus-staging</allowedRepository>
+                                        <allowedRepository>sonatype-nexus-snapshots</allowedRepository>
+                                    </allowedPluginRepositories>
+                                </requireNoRepositories>
+                                <requireProperty>
+                                    <property>project.version</property>
+                                    <message>${projectVersionMessage}</message>
+                                    <regex>${requirePropertyProjectVersion}</regex>
+                                    <regexMessage>${requirePropertyProjectVersionMessage}</regexMessage>
+                                </requireProperty>
+                                <!--bannedDependencies>
+                                    <searchTransitive>true</searchTransitive>
+                                    <excludes>
+                                        <exclude>log4j:log4j</exclude>
+                                        <exclude>commons-logging</exclude>
+                                        <exclude>org.slf4j:slf4j-log4j12</exclude>
+                                        <exclude>org.slf4j:slf4j-jcl</exclude>
+                                        <exclude>org.slf4j:slf4j-jdk14</exclude>
+                                    </excludes>
+                                    <message>${bannedLoggingMessage}</message>
+                                </bannedDependecies-->
+                                <bannedDependencies>
+                                    <searchTransitive>true</searchTransitive>
+                                    <excludes>
+                                    </excludes>
+                                    <message>${bannedDependenciesMessage}</message>
+                                </bannedDependencies>
+                                <!--banDuplicateClasses>
+                                    <ignoreClasses>
+                                        <ignoreClass>com.xyz.i18n.Messages</ignoreClass>
+                                        <ignoreClass>org.apache.commons.logging.*</ignoreClass>
+                                    </ignoreClasses>
+                                    <findAllDuplicates>true</findAllDuplicates>
+                                    <message>${bannedClassesMessage}</message>
+                              </banDuplicateClasses-->
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>                    
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -2059,6 +2156,19 @@
                     <artifactId>maven-soapui-plugin</artifactId>
                     <version>${SoapUi_plugin_version}</version>
                 </plugin>
+                <plugin>
+                    <groupId>ro.isdc.wro4j</groupId>
+                    <artifactId>wro4j-maven-plugin</artifactId>
+                    <version>${Wro4j_plugin_version}</version>
+                    <configuration>
+                        <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>net.jawr</groupId>
+                    <artifactId>maven-jawr-plugin</artifactId>
+                    <version>${Jawr_plugin_version}</version>
+                </plugin>                
             </plugins>
         </pluginManagement>
 
@@ -2067,6 +2177,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>${Compiler_plugin_version}</version>
                 <configuration>
                     <source>${maven.compiler.source}</source>
                     <testSource>${maven.compiler.testSource}</testSource>
@@ -2083,11 +2194,13 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-toolchains-plugin</artifactId>
-                </plugin>
+                <version>${ToolChains_plugin_version}</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-enforcer-plugin</artifactId>
-                <dependencies>
+                <version>${Enforcer_plugin_version}</version>
+                <!--dependencies>
                     <dependency>
                         <groupId>org.codehaus.mojo</groupId>
                         <artifactId>animal-sniffer-enforcer-rule</artifactId>
@@ -2148,7 +2261,7 @@
                                     <regex>${requirePropertyProjectVersion}</regex>
                                     <regexMessage>${requirePropertyProjectVersionMessage}</regexMessage>
                                 </requireProperty>
-                                <!--bannedDependencies>
+                                <! - -bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
                                         <exclude>log4j:log4j</exclude>
@@ -2158,25 +2271,24 @@
                                         <exclude>org.slf4j:slf4j-jdk14</exclude>
                                     </excludes>
                                     <message>${bannedLoggingMessage}</message>
-                                </bannedDependecies-->
+                                </bannedDependecies- ->
                                 <bannedDependencies>
                                     <searchTransitive>true</searchTransitive>
                                     <excludes>
                                     </excludes>
                                     <message>${bannedDependenciesMessage}</message>
                                 </bannedDependencies>
-                                <!--banDuplicateClasses>
-                                    <ignoreClasses>
+                                <! - -<ignoreClasses>
                                         <ignoreClass>com.xyz.i18n.Messages</ignoreClass>
                                         <ignoreClass>org.apache.commons.logging.*</ignoreClass>
                                     </ignoreClasses>
                                     <findAllDuplicates>true</findAllDuplicates>
                                     <message>${bannedClassesMessage}</message>
-                              </banDuplicateClasses-->
+                              </banDuplicateClasses- ->
                             </rules>
                         </configuration>
                     </execution>
-                </executions>
+                </executions-->
             </plugin>
             <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -2197,6 +2309,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-release-plugin</artifactId>
+                <version>${Release_plugin_version}</version>
                 <configuration>
                     <mavenExecutorId>${mavenExecutorId}</mavenExecutorId>
                     <pushChanges>${pushChanges}</pushChanges>
@@ -2212,21 +2325,7 @@
                 </configuration>
             </plugin>
             <!-- codehaus, keep in alphabetical order or by phase -->
-            <!-- google code hosted, keep in alphabetical order or by phase  -->
-            
-            <plugin>
-                <groupId>ro.isdc.wro4j</groupId>
-                <artifactId>wro4j-maven-plugin</artifactId>
-                <version>${Wro4j_plugin_version}</version>
-                <configuration>
-                    <wroManagerFactory>ro.isdc.wro.maven.plugin.manager.factory.ConfigurableWroManagerFactory</wroManagerFactory>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.jawr</groupId>
-                <artifactId>maven-jawr-plugin</artifactId>
-                <version>${Jawr_plugin_version}</version>
-            </plugin>
+            <!-- google code hosted, keep in alphabetical order or by phase  -->            
         </plugins>
     </build>
 
@@ -2500,7 +2599,6 @@
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
         <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
-      <tag>top-level-parent-pom-1.0.3</tag>
   </scm>
     
     <distributionManagement>
@@ -2671,6 +2769,7 @@
                         </configuration>
                     </plugin>
                     <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-enforcer-plugin</artifactId>
                         <version>${Enforcer_plugin_version}</version>
                         <dependencies>
@@ -3167,69 +3266,73 @@
 		<profile>
 		    <id>java-5</id>
 		    <activation>
-		        <!--property>
+		        <property>
 		            <name>java</name>
 		            <value>5</value>
-		        </property-->
-		        <jdk>[1.5,)</jdk>
+		        </property>
+		        <jdk>[1.5,1.6)</jdk>
 		    </activation>	    
 		    <properties>
                 <java_lang_level>1.5</java_lang_level>
                 <jdkName>${jdk5Name}</jdkName>
                 <minJdk>${java_lang_level}.0-22</minJdk>
                 <maxJdk>1.6.0-01</maxJdk>
-                <project_animal_java_sniffer_source_level>java15</project_animal_java_sniffer_source_level>                
+                <project_animal_java_sniffer_source_level>java15</project_animal_java_sniffer_source_level>
+                <arguments>-Dmaven.test.skip.exec=true -Djava=5 -Pjava-5</arguments>
 		    </properties>
 		</profile>		
 		<profile>
 		    <id>java-6</id>
-		    <!--activation>
+		    <activation>
 		        <property>
 		            <name>java</name>
 		            <value>6</value>
 		        </property>		    
-		        <jdk>[1.6,)</jdk>
-		    </activation-->		    
+		        <!--jdk>[1.6,1.7)</jdk-->
+		    </activation>		    
 		    <properties>
                 <java_lang_level>1.6</java_lang_level>
                 <jdkName>${jdk6Name}</jdkName>
                 <minJdk>${java_lang_level}.0-30</minJdk>
                 <maxJdk>1.7.0-01</maxJdk>
-                <project_animal_java_sniffer_source_level>java16</project_animal_java_sniffer_source_level>                
+                <project_animal_java_sniffer_source_level>java16</project_animal_java_sniffer_source_level>
+                <arguments>-Dmaven.test.skip.exec=true -Djava=6 -Pjava-6</arguments>
 		    </properties>
 		</profile>
 		<profile>
 		    <id>java-7</id>
-		    <!--activation>
+		    <activation>
 		        <property>
 		            <name>java</name>
 		            <value>7</value>
 		        </property>		    
-		        <jdk>[1.7,)</jdk>
-		    </activation-->		    
+		        <!--jdk>[1.7,1.8)</jdk-->
+		    </activation>		    
 		    <properties>
                 <java_lang_level>1.7</java_lang_level>
                 <jdkName>${jdk7Name}</jdkName>
                 <minJdk>${java_lang_level}.0-05</minJdk>
                 <maxJdk>1.8.0-01</maxJdk>
                 <project_animal_java_sniffer_source_level>java17</project_animal_java_sniffer_source_level>
+                <arguments>-Dmaven.test.skip.exec=true -Djava=7 -Pjava-7</arguments>
 		    </properties>
 		</profile>
 		<profile>
 		    <id>java-8</id>
-		    <!--activation>
+		    <activation>
 		        <property>
 		            <name>java</name>
 		            <value>8</value>
 		        </property>		    
-		        <jdk>[1.8,)</jdk>
-		    </activation-->		    
+		        <!--jdk>[1.8,1.9)</jdk-->
+		    </activation>		    
 		    <properties>
                 <java_lang_level>1.8</java_lang_level>
                 <jdkName>${jdk8Name}</jdkName>
                 <minJdk>${java_lang_level}.0-01</minJdk>
                 <maxJdk>1.9.0-01</maxJdk>
                 <project_animal_java_sniffer_source_level>java18</project_animal_java_sniffer_source_level>
+                <arguments>-Dmaven.test.skip.exec=true -Djava=8 -Pjava-8</arguments>
 		    </properties>
 		</profile>		
     </profiles>
