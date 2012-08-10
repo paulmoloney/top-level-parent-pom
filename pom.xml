@@ -34,7 +34,7 @@ under the License.
 
     <name>My top level parent project pom</name>
     <description>This project is used for locking down plugin versions and establishing basic configuration for all Maven based projects</description>
-    <url>https://paulmoloney.github.com/top-level-parent-pom</url>
+    <url>http://paulmoloney.github.com/top-level-parent-pom</url>
 
      <properties>
         <!-- Following are defined in settings.xml -->
@@ -48,7 +48,7 @@ under the License.
         <!--siteGroupId>${groupId.replaceAll('.','/')}</siteGroupId-->
         <!--siteGroupId>ie/pmoloney</siteGroupId-->		
                         
-        <site_deploy_url>gitsite:git://github.com/paulmoloney</site_deploy_url>
+        <site_deploy_url>gitsite:git@github.com/paulmoloney</site_deploy_url>
         
         <maven.compiler.source>${java_lang_level}</maven.compiler.source>
         <maven.compiler.testSource>${java_lang_level}</maven.compiler.testSource>
@@ -347,7 +347,7 @@ under the License.
 
     <build>
         <extensions>
-            <extension>
+            <!--extension>
                 <groupId>org.apache.maven.wagon</groupId>
                 <artifactId>wagon-file</artifactId>
                 <version>${Wagon_dependency_jar}</version>
@@ -383,13 +383,23 @@ under the License.
                 <version>${Wagon_dependency_jar}</version>
             </extension>
             <extension>
+                <groupId>org.codehaus.plexus</groupId>
+                <artifactId>plexus-utils</artifactId>
+                <version>1.5.10</version>                        
+            </extension>
+            <extension>
                 <groupId>org.apache.maven.scm</groupId>
-                <artifactId>maven-scm-provider-gitexe</artifactId>
+                <artifactId>maven-scm-api</artifactId>
+                <version>${Scm_plugin_version}</version>
+            </extension-->
+            <extension>
+                <groupId>org.apache.maven.scm</groupId>
+                <artifactId>maven-scm-manager-plexus</artifactId>
                 <version>${Scm_plugin_version}</version>
             </extension>
             <extension>
                 <groupId>org.apache.maven.scm</groupId>
-                <artifactId>maven-scm-manager-plexus</artifactId>
+                <artifactId>maven-scm-provider-gitexe</artifactId>
                 <version>${Scm_plugin_version}</version>
             </extension>
             <extension>
@@ -1078,7 +1088,7 @@ under the License.
                         <outputEncoding>${project.reporting.outputEncoding}</outputEncoding>
                     </configuration>
                     <dependencies>
-                        <dependency>
+                        <!--dependency>
                             <groupId>org.apache.maven.wagon</groupId>
                             <artifactId>wagon-file</artifactId>
                             <version>${Wagon_dependency_jar}</version>
@@ -1113,14 +1123,24 @@ under the License.
                             <artifactId>wagon-ssh-external</artifactId>
                             <version>${Wagon_dependency_jar}</version>                        
                         </dependency>
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-utils</artifactId>
+                            <version>1.5.10</version>                        
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.scm</groupId>
+                            <artifactId>maven-scm-api</artifactId>
+                            <version>${Scm_plugin_version}</version>                        
+                        </dependency-->
 			            <dependency>
 			                <groupId>org.apache.maven.scm</groupId>
-			                <artifactId>maven-scm-provider-gitexe</artifactId>
+			                <artifactId>maven-scm-manager-plexus</artifactId>
 			                <version>${Scm_plugin_version}</version>
 			            </dependency>
 			            <dependency>
 			                <groupId>org.apache.maven.scm</groupId>
-			                <artifactId>maven-scm-manager-plexus</artifactId>
+			                <artifactId>maven-scm-provider-gitexe</artifactId>
 			                <version>${Scm_plugin_version}</version>
 			            </dependency>
 			            <dependency>
@@ -2610,12 +2630,12 @@ under the License.
         <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
         <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
-    <tag>HEAD</tag>
-  </scm>
+        <tag>HEAD</tag>
+    </scm>
     
     <distributionManagement>
         <site>
-            <id>site</id>
+            <id>github-site</id> <!-- must be username git in settings.xml -->
             <!--url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url-->
             <url>${site_deploy_url}/top-level-parent-pom.git</url>
         </site>
@@ -2875,7 +2895,7 @@ under the License.
                   <artifactId>maven-site-plugin</artifactId>
                   <version>${Site_plugin_version}</version>
                     <dependencies>
-                        <dependency>
+                        <!--dependency>
                             <groupId>org.apache.maven.wagon</groupId>
                             <artifactId>wagon-file</artifactId>
                             <version>${Wagon_dependency_jar}</version>
@@ -2910,14 +2930,24 @@ under the License.
                             <artifactId>wagon-ssh-external</artifactId>
                             <version>${Wagon_dependency_jar}</version>
                         </dependency>                        
+                        <dependency>
+                            <groupId>org.codehaus.plexus</groupId>
+                            <artifactId>plexus-utils</artifactId>
+                            <version>1.5.10</version>                        
+                        </dependency>
+                        <dependency>
+                            <groupId>org.apache.maven.scm</groupId>
+                            <artifactId>maven-scm-api</artifactId>
+                            <version>${Scm_plugin_version}</version>
+                        </dependency-->
 			            <dependency>
 			                <groupId>org.apache.maven.scm</groupId>
-			                <artifactId>maven-scm-provider-gitexe</artifactId>
+			                <artifactId>maven-scm-manager-plexus</artifactId>
 			                <version>${Scm_plugin_version}</version>
 			            </dependency>
 			            <dependency>
 			                <groupId>org.apache.maven.scm</groupId>
-			                <artifactId>maven-scm-manager-plexus</artifactId>
+			                <artifactId>maven-scm-provider-gitexe</artifactId>
 			                <version>${Scm_plugin_version}</version>
 			            </dependency>
 			            <dependency>
@@ -2935,7 +2965,7 @@ under the License.
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <dependencies>
-                    <dependency>
+                    <!--dependency>
                         <groupId>org.apache.maven.wagon</groupId>
                         <artifactId>wagon-file</artifactId>
                         <version>${Wagon_dependency_jar}</version>
@@ -2969,15 +2999,25 @@ under the License.
                         <groupId>org.apache.maven.wagon</groupId>
                         <artifactId>wagon-ssh-external</artifactId>
                         <version>${Wagon_dependency_jar}</version>
-                    </dependency>                        
+                    </dependency>
+                    <dependency>
+                        <groupId>org.codehaus.plexus</groupId>
+                        <artifactId>plexus-utils</artifactId>
+                        <version>1.5.10</version>                        
+                    </dependency>
+                    <dependency>
+                        <groupId>org.apache.maven.scm</groupId>
+                        <artifactId>maven-scm-api</artifactId>
+                        <version>${Scm_plugin_version}</version>
+                    </dependency-->
 	                <dependency>
 	                    <groupId>org.apache.maven.scm</groupId>
-	                    <artifactId>maven-scm-provider-gitexe</artifactId>
+	                    <artifactId>maven-scm-manager-plexus</artifactId>
 	                    <version>${Scm_plugin_version}</version>
 	                </dependency>
 	                <dependency>
 	                    <groupId>org.apache.maven.scm</groupId>
-	                    <artifactId>maven-scm-manager-plexus</artifactId>
+	                    <artifactId>maven-scm-provider-gitexe</artifactId>
 	                    <version>${Scm_plugin_version}</version>
 	                </dependency>
 	                <dependency>
