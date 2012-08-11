@@ -1,0 +1,45 @@
+<project name="${project.name}-${project.version}">
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-default-skin</artifactId>
+    <!--version></version-->
+  </skin>
+  
+  <bannerLeft>
+    <name>Apache</name>
+    <src>images/apache.png</src>
+    <href>http://www.apache.org</href>
+  </bannerLeft>
+  <bannerRight>
+    <name>Right Banner</name>
+    <src>images/maven.png</src>
+    <href>http://maven.apache.org</href>
+  </bannerRight>
+
+  <version position="right"/>
+  <publishDate position="navigation-bottom" format="yyyy-MM-dd"/>
+      
+  <body>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=${outputEncoding}" />    
+      <link href="http://github.com/paulmoloney/sites/${project.name}/feeds/blog"
+        type="application/atom+xml"
+        id="auto-discovery"
+        rel="alternate"
+        title="${project.name} Blog" />
+    </head>
+    <breadcrumbs>
+      <item name="Maven" href="http://maven.apache.org"/>
+      <item name="Codehaus" href="http://mojo.codehaus.org"/>
+    </breadcrumbs>
+    <links>
+      <item name="Apache" href="http://www.apache.org"/>
+      <item name="Maven" href="http://maven.apache.org"/>
+    </links>      
+    <menu name="${project.name} Project">
+      <item name="Overview" href="index.html"/>
+    </menu>
+    <menu ref="reports"/>
+  </body>
+</project>
+

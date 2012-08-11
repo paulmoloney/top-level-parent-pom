@@ -80,7 +80,7 @@ under the License.
         <CheckStyle_dependency_jar>5.5</CheckStyle_dependency_jar>
         <Cobertura_dependency_jar>1.9.4.1</Cobertura_dependency_jar>
         <Clojure_dependency_jar>1.4.0</Clojure_dependency_jar>
-        <FindBugs_dependency_jar>2.0.0</FindBugs_dependency_jar>
+        <FindBugs_dependency_jar>2.0.1</FindBugs_dependency_jar>
         <FbContrib_version_jar>4.6.1</FbContrib_version_jar>
         <Pmd_dependency_jar>5.0.0</Pmd_dependency_jar>
         <LessCss_dependency_jar>1.3.0</LessCss_dependency_jar>
