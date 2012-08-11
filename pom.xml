@@ -2627,8 +2627,10 @@ under the License.
     <mailingLists-->
 
     <scm>
-        <connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
-        <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection>
+        <!--connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
+        <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection-->
+        <connection>scm:git:ssh://github.com/paulmoloney/${artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/paulmoloney/${artifactId}.git</developerConnection>
         <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
         <tag>HEAD</tag>
     </scm>
