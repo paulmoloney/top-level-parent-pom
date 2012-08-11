@@ -1,8 +1,8 @@
 <project name="${project.name}-${project.version}">
   <skin>
     <groupId>org.apache.maven.skins</groupId>
-    <artifactId>maven-default-skin</artifactId>
-    <!--version></version-->
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.2.2</version>
   </skin>
   
   <bannerLeft>
@@ -11,7 +11,7 @@
     <href>http://www.apache.org</href>
   </bannerLeft>
   <bannerRight>
-    <name>Right Banner</name>
+    <name>Maven</name>
     <src>images/maven.png</src>
     <href>http://maven.apache.org</href>
   </bannerRight>

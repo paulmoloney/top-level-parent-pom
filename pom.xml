@@ -34,9 +34,10 @@ under the License.
 
     <name>My top level parent project pom</name>
     <description>This project is used for locking down plugin versions and establishing basic configuration for all Maven based projects</description>
-    <url>http://paulmoloney.github.com/top-level-parent-pom</url>
+    <url>http://${owner}.github.com/${project.artifactId}</url>
 
-     <properties>
+    <properties>
+        <owner>paulmoloney</owner>
         <!-- Following are defined in settings.xml -->
         <!--site_deploy_url>file:/opt/shared/projects/maven-sites</site_deploy_url>
         <distro_release_url>http://localhost/nexus/content/repositories/releases</distro_release_url>
@@ -48,7 +49,7 @@ under the License.
         <!--siteGroupId>${groupId.replaceAll('.','/')}</siteGroupId-->
         <!--siteGroupId>ie/pmoloney</siteGroupId-->		
                         
-        <site_deploy_url>gitsite:git@github.com/paulmoloney</site_deploy_url>
+        <site_deploy_url>gitsite:git@github.com/${owner}</site_deploy_url>
         
         <maven.compiler.source>${java_lang_level}</maven.compiler.source>
         <maven.compiler.testSource>${java_lang_level}</maven.compiler.testSource>
@@ -325,7 +326,7 @@ under the License.
         <javaDocFooter><![CDATA[<b>${project.name} ${project.version}</b>]]></javaDocFooter>
         <javaDocTitle><![CDATA[${project.artifactId} ${project.version}]]></javaDocTitle>
         <javaDocWindowTitle><![CDATA[${project.artifactId} ${project.version}]]></javaDocWindowTitle>
-        <javaDocBottom><![CDATA[Copyright &#38;copy;${project.inceptionYear}-{currentYear} <a href="http://github.com/paulmoloney">Paul Moloney</a>All Rights Reserved]]></javaDocBottom>
+        <javaDocBottom><![CDATA[Copyright &#38;copy;${project.inceptionYear}-{currentYear} <a href="http://github.com/${owner}">Paul Moloney</a>All Rights Reserved]]></javaDocBottom>
 
         <gpg.skip>true</gpg.skip>
         <gpg.useagent>true</gpg.useagent>
@@ -2572,6 +2573,7 @@ under the License.
             <organizationUrl />
             <timezone>GMT</timezone>
             <roles>
+                <role>architect</role>            
                 <role>developer</role>
             </roles>
         </developer>
@@ -2584,7 +2586,7 @@ under the License.
 
     <issueManagement>
         <system>github</system>
-        <url><![CDATA[http://github.com/paulmoloney/top-level-parent-pom/issues]]></url>
+        <url><![CDATA[http://github.com/${owner}/${project.artifactId}/issues]]></url>
     </issueManagement>
 
     <licenses>
@@ -2627,11 +2629,11 @@ under the License.
     <mailingLists-->
 
     <scm>
-        <!--connection>scm:git:git://github.com/paulmoloney/top-level-parent-pom.git</connection>
-        <developerConnection>scm:git:git@github.com:paulmoloney/top-level-parent-pom.git</developerConnection-->
-        <connection>scm:git:ssh://github.com/paulmoloney/${artifactId}.git</connection>
-        <developerConnection>scm:git:ssh://git@github.com/paulmoloney/${artifactId}.git</developerConnection>
-        <url>https://github.com/paulmoloney/top-level-parent-pom/tree/master/</url>
+        <!--connection>scm:git:git://github.com/${owner}/${project.artifactId}git</connection>
+        <developerConnection>scm:git:git@github.com:${owner}/${project.artifactId}.git</developerConnection-->
+        <connection>scm:git:ssh://github.com/${owner}/${project.artifactId}.git</connection>
+        <developerConnection>scm:git:ssh://git@github.com/${owner}/${project.artifactId}.git</developerConnection>
+        <url>https://github.com/${owner}/${project.artifactId}/tree/master/</url>
         <tag>HEAD</tag>
     </scm>
     
@@ -2639,7 +2641,7 @@ under the License.
         <site>
             <id>github-site</id> <!-- must be username git in settings.xml -->
             <!--url>${site_deploy_url}/${siteGroupId}/${project.artifactId}/${project.version}</url-->
-            <url>${site_deploy_url}/top-level-parent-pom.git</url>
+            <url>${site_deploy_url}/${project.artifactId}.git</url>
         </site>
         <!--repository>
             <id>releases</id>
