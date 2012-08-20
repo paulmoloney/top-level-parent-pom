@@ -83,7 +83,7 @@ under the License.
         <Clojure_dependency_jar>1.4.0</Clojure_dependency_jar>
         <FindBugs_dependency_jar>2.0.1</FindBugs_dependency_jar>
         <FbContrib_version_jar>4.6.1</FbContrib_version_jar>
-        <Pmd_dependency_jar>5.0.0</Pmd_dependency_jar>
+        <Pmd_dependency_jar>4.3</Pmd_dependency_jar>
         <LessCss_dependency_jar>1.3.0</LessCss_dependency_jar>
         <WagonGitSite_dependency_jar>0.3.1</WagonGitSite_dependency_jar>
         
@@ -114,7 +114,7 @@ under the License.
         <Changes_plugin_version>2.7.1</Changes_plugin_version>
         <CheckStyle_plugin_version>2.9.1</CheckStyle_plugin_version>
         <CheckSum_plugin_version>1.0</CheckSum_plugin_version>
-        <Chronos_plugin_version>1.0</Chronos_plugin_version>
+        <Chronos_plugin_version>1.0.1</Chronos_plugin_version>
         <Clean_plugin_version>2.5</Clean_plugin_version>
         <Cli_plugin_version>1.0.6</Cli_plugin_version>
         <Clirr_plugin_version>2.4</Clirr_plugin_version>
@@ -152,7 +152,7 @@ under the License.
         <Hibernate3_plugin_version>3.0</Hibernate3_plugin_version>
         <Help_plugin_version>2.1.1</Help_plugin_version>
         <Ianal_plugin_version>1.0-alpha-1</Ianal_plugin_version>
-        <Invoker_plugin_version>1.6</Invoker_plugin_version>
+        <Invoker_plugin_version>1.7</Invoker_plugin_version>
         <Install_plugin_version>2.3.1</Install_plugin_version>
         <Jar_plugin_version>2.4</Jar_plugin_version>
         <JarJar_plugin_version>1.5</JarJar_plugin_version>
@@ -193,7 +193,7 @@ under the License.
         <RemoteResources_plugin_version>1.3</RemoteResources_plugin_version>
         <Replacer_plugin_version>1.4.1</Replacer_plugin_version>
         <Repository_plugin_version>2.3.1</Repository_plugin_version>
-        <Resources_plugin_version>2.5</Resources_plugin_version>
+        <Resources_plugin_version>2.6</Resources_plugin_version>
         <Scala_plugin_version>2.15.2</Scala_plugin_version>
         <Schemagen_plugin_version>1.2</Schemagen_plugin_version>
         <Scm_plugin_version>1.7</Scm_plugin_version>
@@ -346,6 +346,28 @@ under the License.
         <maven>${minMaven}</maven>
     </prerequisites>
 
+<!--
+//todo 
+1) investigate usage of following to amalgamate / trim some profiles
+
+Only valid with mvn 3.0.2+ and on plugin configuration only
+<configuration>
+  <items combine.children="append">
+    <- - combine.children="merge" is the default - ->
+    <item>child-1</item>
+  </items>
+  <properties combine.self="override">
+    <- - combine.self="merge" is the default - ->
+    <childKey>child</childKey>
+  </properties>
+</configuration>
+
+2) bom for test jars
+3) project holding static checkstyle/findbugs/pmd configuration for usage outside of sonar
+4) unit vs it test coverage
+5) reporting cleanup
+
+ -->
     <build>
         <extensions>
             <!--extension>
@@ -1008,7 +1030,7 @@ under the License.
                     </executions-->
                     <dependencies>
                         <dependency>
-                            <groupId>net.sourceforge.pmd</groupId>
+                            <groupId>pmd</groupId>
                             <artifactId>pmd</artifactId>
                             <version>${Pmd_dependency_jar}</version>
                         </dependency>
@@ -1337,12 +1359,12 @@ under the License.
                     <version>${Castor_plugin_version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo.chronos</groupId>
+                    <groupId>org.codehaus.mojo</groupId>
                     <artifactId>chronos-jmeter-maven-plugin</artifactId>
                     <version>${Chronos_plugin_version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.codehaus.mojo.chronos</groupId>
+                    <groupId>org.codehaus.mojo</groupId>
                     <artifactId>chronos-report-maven-plugin</artifactId>
                     <version>${Chronos_plugin_version}</version>
                 </plugin>
@@ -3079,6 +3101,59 @@ under the License.
                                          -->
                                     </configuration>
                                 </plugin>
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-surefire-report-plugin</artifactId>
+                                    <version>${Surefire_plugin_version}</version>
+                                </plugin>
+                                <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-jxr-plugin</artifactId>
+                                    <version>${Jxr_plugin_version}</version>
+                                </plugin>
+                                <plugin>
+                                    <artifactId>maven-pmd-plugin</artifactId>
+                                    <version>${Pmd_plugin_version}</version>
+                                    <reportSets>
+                                        <reportSet>
+                                            <reports>
+                                                <report>pmd</report>
+                                                <report>cpd</report>
+                                            </reports>
+                                        </reportSet>
+                                    </reportSets>
+                               </plugin>
+                               <plugin>
+                                    <groupId>org.apache.maven.plugins</groupId>
+                                    <artifactId>maven-checkstyle-plugin</artifactId>
+                                    <version>${Checkstyle_plugin_version}</version>
+                               </plugin>
+                               <plugin>
+                                    <groupId>org.codehaus.mojo</groupId>
+                                    <artifactId>findbugs-maven-plugin</artifactId>
+                                    <version>${Findbugs_plugin_version}</version>
+                               </plugin>                               
+                               <plugin>
+                                    <groupId>org.codehaus.mojo</groupId>
+                                    <artifactId>taglist-maven-plugin</artifactId>
+                                    <version>${TagList_plugin_version}</version>
+                               </plugin>
+                               <plugin>
+                                    <groupId>org.codehaus.mojo</groupId>
+                                    <artifactId>cobertura-maven-plugin</artifactId>
+                                    <version>${Cobertura_plugin_version}</version>
+                                    <configuration>
+                                        <formats>
+                                            <format>html</format>
+                                            <format>xml</format>
+                                        </formats>
+                                    </configuration>
+                               </plugin>
+                               <plugin>
+                                    <groupId>org.codehaus.mojo</groupId>
+                                    <artifactId>chronos-report-maven-plugin</artifactId>
+                                    <version>${Chronos_plugin_version}</version>
+                               </plugin>
                             </reportPlugins>
                         </configuration>
                     </execution>
@@ -3257,9 +3332,24 @@ under the License.
                                     <doUpdate>false</doUpdate>
                                     <revisionOnScmFailure>UNKNOWN</revisionOnScmFailure>
                                     <getRevisionOnlyOnce>true</getRevisionOnlyOnce>
+	                                <!--providerImplementations>
+                                        <svn>javasvn</svn>
+                                    </providerImplementations-->
                                 </configuration>
                             </execution>
                       </executions>
+	                  <!--dependencies>
+                          <dependency>
+                              <groupId>com.google.code.maven-scm-provider-svnjava</groupId>
+                              <artifactId>maven-scm-provider-svnjava</artifactId>
+                              <version>2.0.3</version>
+                          </dependency>
+                          <dependency>
+                              <groupId>org.tmatesoft.svnkit</groupId>
+                              <artifactId>svnkit</artifactId>
+                              <version>1.7.5-v1</version>
+                          </dependency>
+                      </dependencies-->                      
                     </plugin>
                     <plugin>
                         <groupId>org.codehaus.mojo</groupId>
