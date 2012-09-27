@@ -95,11 +95,11 @@ under the License.
 
         <AnimalSniffer_plugin_version>1.8</AnimalSniffer_plugin_version>
         <AntRun_plugin_version>1.7</AntRun_plugin_version>
-        <AntRunExtended_plugin_version>1.42</AntRunExtended_plugin_version>
+        <AntRunExtended_plugin_version>1.43</AntRunExtended_plugin_version>
         <Antlr2_plugin_version>2.2</Antlr2_plugin_version>
         <Antlr3_plugin_version>1.0</Antlr3_plugin_version>
         <Antlr3_antlr_plugin_version>3.4</Antlr3_antlr_plugin_version>
-        <Appassembler_plugin_version>1.2.2</Appassembler_plugin_version>
+        <Appassembler_plugin_version>1.3</Appassembler_plugin_version>
         <Apt_plugin_version>1.0-alpha-5</Apt_plugin_version>
         <Archetype_plugin_version>2.2</Archetype_plugin_version>
         <ArgoUml_plugin_version>1.0-SNAPSHOT</ArgoUml_plugin_version>
@@ -109,29 +109,29 @@ under the License.
         <Axis2_plugin_version>1.6.2</Axis2_plugin_version>
         <BuildHelper_plugin_version>1.7</BuildHelper_plugin_version>
         <BuildNumber_plugin_version>1.1</BuildNumber_plugin_version>
-        <Cargo_plugin_version>1.2.3</Cargo_plugin_version>
+        <Cargo_plugin_version>1.2.4</Cargo_plugin_version>
         <Castor_plugin_version>2.1</Castor_plugin_version>
-        <Changes_plugin_version>2.7.1</Changes_plugin_version>
+        <Changes_plugin_version>2.8</Changes_plugin_version>
         <CheckStyle_plugin_version>2.9.1</CheckStyle_plugin_version>
         <CheckSum_plugin_version>1.0</CheckSum_plugin_version>
-        <Chronos_plugin_version>1.0.1</Chronos_plugin_version>
+        <Chronos_plugin_version>1.1.0</Chronos_plugin_version>
         <Clean_plugin_version>2.5</Clean_plugin_version>
         <Cli_plugin_version>1.0.6</Cli_plugin_version>
         <Clirr_plugin_version>2.4</Clirr_plugin_version>
-        <Clojure_plugin_version>1.3.10</Clojure_plugin_version>
-        <Cobertura_plugin_version>2.5.1</Cobertura_plugin_version>
+        <Clojure_plugin_version>1.3.12</Clojure_plugin_version>
+        <Cobertura_plugin_version>2.5.2</Cobertura_plugin_version>
         <Cobertura4It_plugin_version>1.0</Cobertura4It_plugin_version>
         <Compiler_plugin_version>2.5.1</Compiler_plugin_version>
-        <Cxf_plugin_version>2.6.1</Cxf_plugin_version>
+        <Cxf_plugin_version>2.6.2</Cxf_plugin_version>
         <DashBoard_plugin_version>1.0.0-beta-1</DashBoard_plugin_version>
         <Db_plugin_version>1.2-SNAPSHOT</Db_plugin_version>
         <DbUnit_plugin_version>1.0-beta-3</DbUnit_plugin_version>
         <DbUpgrade_plugin_version>1.0-beta-2</DbUpgrade_plugin_version>
-        <Dependency_plugin_version>2.5</Dependency_plugin_version>
+        <Dependency_plugin_version>2.5.1</Dependency_plugin_version>
         <Deploy_plugin_version>2.7</Deploy_plugin_version>
         <Doxygen_plugin_version>1.0.1</Doxygen_plugin_version>
         <DoxygenDoodle_plugin_version>2.2</DoxygenDoodle_plugin_version>
-        <Ear_plugin_version>2.7</Ear_plugin_version>
+        <Ear_plugin_version>2.8</Ear_plugin_version>
         <Eclipse_plugin_version>2.9</Eclipse_plugin_version>
         <EclipseLink_plugin_version>1.0.3</EclipseLink_plugin_version>
         <Emma_plugin_version>1.0-alpha-3</Emma_plugin_version>
@@ -142,7 +142,7 @@ under the License.
         <Exec_plugin_version>1.2.1</Exec_plugin_version>
         <FailSafe_plugin_version>${SureFire_plugin_version}</FailSafe_plugin_version>
         <FelixBundle_plugin_version>2.3.7</FelixBundle_plugin_version>
-        <FelixScr_plugin_version>1.7.4</FelixScr_plugin_version>
+        <FelixScr_plugin_version>1.8.0</FelixScr_plugin_version>
         <FindBugs_plugin_version>2.5.2</FindBugs_plugin_version>
         <Gpg_plugin_version>1.4</Gpg_plugin_version>
         <GMaven_plugin_version>1.4</GMaven_plugin_version>
@@ -153,17 +153,17 @@ under the License.
         <Help_plugin_version>2.1.1</Help_plugin_version>
         <Ianal_plugin_version>1.0-alpha-1</Ianal_plugin_version>
         <Invoker_plugin_version>1.7</Invoker_plugin_version>
-        <Install_plugin_version>2.3.1</Install_plugin_version>
+        <Install_plugin_version>2.4</Install_plugin_version>
         <Jar_plugin_version>2.4</Jar_plugin_version>
-        <JarJar_plugin_version>1.5</JarJar_plugin_version>
+        <JarJar_plugin_version>1.6</JarJar_plugin_version>
         <JarSigner_plugin_version>1.2</JarSigner_plugin_version>
         <Jasmine_plugin_version>1.2.0</Jasmine_plugin_version>
-        <JavaDoc_plugin_version>2.8.1</JavaDoc_plugin_version>
+        <JavaDoc_plugin_version>2.9</JavaDoc_plugin_version>
         <JavaNcss_plugin_version>2.0</JavaNcss_plugin_version>
         <JavaProcessor_plugin_version>1.0</JavaProcessor_plugin_version>
         <Jawr_plugin_version>1.4.2</Jawr_plugin_version>
         <Jaxb_plugin_version>1.1.1</Jaxb_plugin_version>
-        <Jaxb2_plugin_version>1.4</Jaxb2_plugin_version>
+        <Jaxb2_plugin_version>1.5</Jaxb2_plugin_version>
         <Jaxws_plugin_version>1.12</Jaxws_plugin_version>
         <JDepend_plugin_version>2.0-beta-2</JDepend_plugin_version>
         <Jetty6_plugin_version>6.1.26</Jetty6_plugin_version>
@@ -174,11 +174,11 @@ under the License.
         <Jxr_plugin_version>2.3</Jxr_plugin_version>
         <KeyTool_plugin_version>1.2</KeyTool_plugin_version>
         <LessCss_plugin_version>1.0-beta-3</LessCss_plugin_version>
-        <License_plugin_version>1.2</License_plugin_version>
+        <License_plugin_version>1.3</License_plugin_version>
         <LicenseVerifier_plugin_version>0.4</LicenseVerifier_plugin_version>
         <LiveCycleMapping_plugin_version>1.0.0</LiveCycleMapping_plugin_version>
         <MockRepository_plugin_version>1.0-alpha-1-SNAPSHOT</MockRepository_plugin_version>
-        <Mrm_plugin_version>1.0-alpha-1</Mrm_plugin_version>
+        <Mrm_plugin_version>1.0-beta-1</Mrm_plugin_version>
         <Mule_plugin_version>1.8</Mule_plugin_version>
         <Mvnsh_plugin_version>1.0.1</Mvnsh_plugin_version>
         <Native2Ascii_plugin_version>1.0-beta-1</Native2Ascii_plugin_version>
@@ -187,7 +187,7 @@ under the License.
         <Pmd_plugin_version>2.7.1</Pmd_plugin_version>
         <Processor_plugin_version>2.0.5</Processor_plugin_version>
         <Properties_plugin_version>1.0-alpha-2</Properties_plugin_version>
-        <ProjectInfoReports_plugin_version>2.5</ProjectInfoReports_plugin_version>
+        <ProjectInfoReports_plugin_version>2.5.1</ProjectInfoReports_plugin_version>
         <Reactor_plugin_version>1.0</Reactor_plugin_version>
         <Release_plugin_version>2.3.2</Release_plugin_version>
         <RemoteResources_plugin_version>1.3</RemoteResources_plugin_version>
@@ -196,11 +196,11 @@ under the License.
         <Resources_plugin_version>2.6</Resources_plugin_version>
         <Scala_plugin_version>2.15.2</Scala_plugin_version>
         <Schemagen_plugin_version>1.2</Schemagen_plugin_version>
-        <Scm_plugin_version>1.7</Scm_plugin_version>
+        <Scm_plugin_version>1.8</Scm_plugin_version>
         <Selenium_plugin_version>2.3</Selenium_plugin_version>
         <ServiceMix_checksum_plugin_version>1.1</ServiceMix_checksum_plugin_version>
         <SetUp_plugin_version>1.0.0-alpha-1-SNAPSHOT</SetUp_plugin_version>
-        <Shade_plugin_version>1.7.1</Shade_plugin_version>
+        <Shade_plugin_version>2.0</Shade_plugin_version>
         <Site_plugin_version>3.1</Site_plugin_version>
         <SoapUi_plugin_version>4.0.1</SoapUi_plugin_version>
         <Sonar_LicenseHeaders_plugin_version>1.0</Sonar_LicenseHeaders_plugin_version>
@@ -227,14 +227,14 @@ under the License.
         <SonarBootStrap_plugin_version>2.0</SonarBootStrap_plugin_version>
         <Source_plugin_version>2.2</Source_plugin_version>
         <Sql_plugin_version>1.5</Sql_plugin_version>
-        <SureFire_plugin_version>2.12.2</SureFire_plugin_version>
+        <SureFire_plugin_version>2.12.3</SureFire_plugin_version>
         <SureFireReport_plugin_version>${SureFire_plugin_version}</SureFireReport_plugin_version>
         <SvnRevisionNumber_plugin_version>1.7</SvnRevisionNumber_plugin_version>
         <TagList_plugin_version>2.4</TagList_plugin_version>
         <Tomcat_plugin_version>1.1</Tomcat_plugin_version>
-        <Tomcat2_plugin_version>2.0-beta-1</Tomcat2_plugin_version>
+        <Tomcat2_plugin_version>2.0</Tomcat2_plugin_version>
         <ToolChains_plugin_version>1.0</ToolChains_plugin_version>
-        <Truezip_plugin_version>1.0</Truezip_plugin_version>
+        <Truezip_plugin_version>1.1</Truezip_plugin_version>
         <Uberizer_plugin_version>1.13</Uberizer_plugin_version>
         <Verifier_library_version>1.3</Verifier_library_version> <!--org.apache.maven.shared:maven-verifier, use as test dependency -->
         <Versions_plugin_version>1.3.1</Versions_plugin_version>
@@ -243,7 +243,7 @@ under the License.
         <War_plugin_version>2.2</War_plugin_version>
         <Was_plugin_version>1.2</Was_plugin_version>
         <Webservices-tools_plugin_version>2.1-b16</Webservices-tools_plugin_version>
-        <Wro4j_plugin_version>1.4.8</Wro4j_plugin_version>
+        <Wro4j_plugin_version>1.4.9</Wro4j_plugin_version>
         <Xjc_plugin_version>1.1.1</Xjc_plugin_version>
         <XmlBean_plugin_version>2.3.3</XmlBean_plugin_version>
         <YuiCompressor_plugin_version>1.3.0</YuiCompressor_plugin_version>       
