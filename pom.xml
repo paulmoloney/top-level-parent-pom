@@ -333,10 +333,10 @@ under the License.
         <mavenExecutorId>invoker</mavenExecutorId> <!-- forked-path if start using gpg -->
         <useReleaseProfile>true</useReleaseProfile>
         <releaseProfiles>release-profile,me-release-profile</releaseProfiles>
-        <pushChanges>release</pushChanges> <!-- false for git or similar dscm -->
+        <pushChanges>true</pushChanges> <!-- false for git or similar dscm -->
         <localCheckout>true</localCheckout> <!-- true for git or similar dscm -->
         <completionGoals />
-        <goals>site-deploy</goals>
+        <goals>deploy site-deploy</goals>
         <preparationGoals>clean verify</preparationGoals>
         <me_cobertura_pattern>ie.paulmoloney.*</me_cobertura_pattern>
         <me_cobertura_pattern2>com.github.paulmoloney.*</me_cobertura_pattern2>
