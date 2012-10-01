@@ -333,7 +333,7 @@ under the License.
         <mavenExecutorId>invoker</mavenExecutorId> <!-- forked-path if start using gpg -->
         <useReleaseProfile>true</useReleaseProfile>
         <releaseProfiles>release-profile,me-release-profile</releaseProfiles>
-        <pushChanges>true</pushChanges> <!-- false for git or similar dscm -->
+        <pushChanges>false</pushChanges> <!-- false for git or similar dscm -->
         <localCheckout>true</localCheckout> <!-- true for git or similar dscm -->
         <completionGoals />
         <goals>deploy site-deploy</goals>
