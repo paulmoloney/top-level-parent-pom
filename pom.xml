@@ -29,7 +29,7 @@ under the License.
     
     <groupId>com.github.paulmoloney</groupId>
     <artifactId>top-level-parent-pom</artifactId>
-    <version>1.0.11-SNAPSHOT</version>
+    <version>1.0.11</version>
     <packaging>pom</packaging>
 
     <name>My top level parent project pom</name>
@@ -2656,7 +2656,7 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
         <connection>scm:git:ssh://github.com/${owner}/${project.artifactId}.git</connection>
         <developerConnection>scm:git:ssh://git@github.com/${owner}/${project.artifactId}.git</developerConnection>
         <url>https://github.com/${owner}/${project.artifactId}/tree/master/</url>
-        <tag>HEAD</tag>
+        <tag>top-level-parent-pom-1.0.11</tag>
     </scm>
     
     <distributionManagement>
