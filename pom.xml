@@ -318,7 +318,7 @@ under the License.
         <Assembly_Default_Directory_Mode>${Assembly_Directory_Mode}</Assembly_Default_Directory_Mode>
 
         <Eclipse_Wtp_version>2.0</Eclipse_Wtp_version>
-        <UmlGraph_dependency_jar>5.6</UmlGraph_dependency_jar>
+        <UmlGraph_dependency_jar>4.8</UmlGraph_dependency_jar>
 
         <JavaDoc_Additional_Param>-inferrel -inferdep -quiet -hide java.* -collpackages java.util.* -qualify -postfixpackage -nodefontsize 9 -nodefontpackagesize 7</JavaDoc_Additional_Param>
         <maven.build.timestamp.format>yyyy-MM-dd HH:mm:ss.SSS Z</maven.build.timestamp.format>
@@ -333,7 +333,7 @@ under the License.
         <gpg.useagent>true</gpg.useagent>
         <mavenExecutorId>invoker</mavenExecutorId> <!-- forked-path if start using gpg -->
         <useReleaseProfile>true</useReleaseProfile>
-        <releaseProfiles>release-profile,me-release-profile,sonatype-oss-release</releaseProfiles>
+        <releaseProfiles>release-profile,javadoc,me-release-profile,sonatype-oss-release</releaseProfiles>
         <pushChanges>false</pushChanges> <!-- false for git or similar dscm -->
         <localCheckout>true</localCheckout> <!-- true for git or similar dscm -->
         <completionGoals />
@@ -946,13 +946,13 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                              or apiviz
                              doc check doclet
                         -->
-                        <doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
+                        <!--doclet>org.umlgraph.doclet.UmlGraphDoc</doclet>
                         <docletArtifact>
                           <groupId>org.umlgraph</groupId>
                           <artifactId>umlgraph</artifactId>
                           <version>${UmlGraph_dependency_jar}</version>
                         </docletArtifact>
-                        <additionalparam>${JavaDoc_Additional_Param}</additionalparam>
+                        <additionalparam>${JavaDoc_Additional_Param}</additionalparam-->
                         <!--
                         <doclet>org.jboss.apiviz.APIviz</doclet>
                         <docletArtifact>
@@ -2396,7 +2396,7 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                     <failsOnError>${checkStyle.failsOnError}</failsOnError>
                 </configuration>
             </plugin-->
-            <!--plugin>
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
                 <version>${JavaDoc_plugin_version}</version>
@@ -2404,7 +2404,7 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                     <failOnError>false</failOnError>
                     <source>${maven.compiler.source}</source>
                     <javadocVersion>${javadocVersion}</javadocVersion>
-                    <includeDependencySources>false</includeDependencySources-->
+                    <!--includeDependencySources>false</includeDependencySources-->
                     <!-- (umlgraph / graphviz)
                          or apiviz
                          doc check doclet
@@ -2435,8 +2435,8 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                     <keywords>true</keywords>
                     <additionalparam>-sourceclasspath ${project.build.outputDirectory}</additionalparam>
                     -->
-                <!--/configuration>
-            </plugin-->
+                </configuration>
+            </plugin>
             <!--plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -3100,6 +3100,14 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                                              or apiviz
                                              doc check doclet
                                          -->
+                                        <executions>
+                                            <execution>
+                                                <id>site-javadoc</id>
+                                                <goals>
+                                                    <goal>aggregate-jar</goal>
+                                                </goals>
+                                            </execution>
+                                        </executions>
                                     </configuration>
                                 </plugin>
                                 <plugin>
@@ -3386,6 +3394,25 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
             </build>
         </profile>
         <profile>
+            <id>javadoc</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <id>attach-javadoc</id>
+                                <goals>
+                                    <goal>aggregate-jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
             <id>skipTests</id>
             <properties>
                 <testSkipExec>true</testSkipExec>
@@ -3501,6 +3528,7 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                 <maxJdk>1.7.0-01</maxJdk>
                 <project_animal_java_sniffer_source_level>java16</project_animal_java_sniffer_source_level>
                 <arguments>-Dmaven.test.skip.exec=true -Djava=6 -Pjava-6</arguments>
+                <UmlGraph_dependency_jar>5.6</UmlGraph_dependency_jar>
 		    </properties>
 		</profile>
 		<profile>
@@ -3519,6 +3547,7 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                 <maxJdk>1.8.0-01</maxJdk>
                 <project_animal_java_sniffer_source_level>java17</project_animal_java_sniffer_source_level>
                 <arguments>-Dmaven.test.skip.exec=true -Djava=7 -Pjava-7</arguments>
+                <UmlGraph_dependency_jar>5.6</UmlGraph_dependency_jar>
 		    </properties>
 		</profile>
 		<profile>
@@ -3537,6 +3566,7 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
                 <maxJdk>1.9.0-01</maxJdk>
                 <project_animal_java_sniffer_source_level>java18</project_animal_java_sniffer_source_level>
                 <arguments>-Dmaven.test.skip.exec=true -Djava=8 -Pjava-8</arguments>
+                <UmlGraph_dependency_jar>5.6</UmlGraph_dependency_jar>
 		    </properties>
 		</profile>		
     </profiles>
