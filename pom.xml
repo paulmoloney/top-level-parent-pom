@@ -226,7 +226,7 @@ under the License.
         <Sonar_Web_plugin_version>1.0.2</Sonar_Web_plugin_version>
         <Sonar_SonarJ_plugin_version>2.1.2</Sonar_SonarJ_plugin_version>
         <SonarBootStrap_plugin_version>2.0</SonarBootStrap_plugin_version>
-        <Source_plugin_version>2.2</Source_plugin_version>
+        <Source_plugin_version>2.1.2</Source_plugin_version>
         <Sql_plugin_version>1.5</Sql_plugin_version>
         <SureFire_plugin_version>2.12.4</SureFire_plugin_version>
         <SureFireReport_plugin_version>${SureFire_plugin_version}</SureFireReport_plugin_version>
@@ -241,7 +241,7 @@ under the License.
         <Versions_plugin_version>1.3.1</Versions_plugin_version>
         <Wagon_plugin_version>1.0-beta-4</Wagon_plugin_version>
         <Webminifier_plugin_version>1.0.1</Webminifier_plugin_version>
-        <War_plugin_version>2.2</War_plugin_version>
+        <War_plugin_version>2.3</War_plugin_version>
         <Was_plugin_version>1.2</Was_plugin_version>
         <Webservices-tools_plugin_version>2.1-b16</Webservices-tools_plugin_version>
         <Wro4j_plugin_version>1.5.0</Wro4j_plugin_version>
@@ -333,7 +333,7 @@ under the License.
         <gpg.useagent>true</gpg.useagent>
         <mavenExecutorId>invoker</mavenExecutorId> <!-- forked-path if start using gpg -->
         <useReleaseProfile>true</useReleaseProfile>
-        <releaseProfiles>release-profile,me-release-profile</releaseProfiles>
+        <releaseProfiles>release-profile,me-release-profile,sonatype-oss-release</releaseProfiles>
         <pushChanges>false</pushChanges> <!-- false for git or similar dscm -->
         <localCheckout>true</localCheckout> <!-- true for git or similar dscm -->
         <completionGoals />
@@ -3427,7 +3427,7 @@ Only valid with mvn 3.0.2+ and on plugin configuration only
 			<id>unix</id>
 			<activation>
 			    <os>
-				    <family>unix</family>				
+				    <family>unix</family>
 			    </os>
 			</activation>
 			<properties>
