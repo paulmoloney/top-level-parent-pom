@@ -202,7 +202,7 @@ under the License.
         <ServiceMix_checksum_plugin_version>1.1</ServiceMix_checksum_plugin_version>
         <SetUp_plugin_version>1.0.0-alpha-1-SNAPSHOT</SetUp_plugin_version>
         <Shade_plugin_version>2.0</Shade_plugin_version>
-        <Site_plugin_version>3.1</Site_plugin_version>
+        <Site_plugin_version>3.2</Site_plugin_version>
         <SoapUi_plugin_version>4.0.1</SoapUi_plugin_version>
         <Sonar_LicenseHeaders_plugin_version>1.0</Sonar_LicenseHeaders_plugin_version>
         <Sonar_ArtifactSize_plugin_version>0.2</Sonar_ArtifactSize_plugin_version>
@@ -226,7 +226,7 @@ under the License.
         <Sonar_Web_plugin_version>1.0.2</Sonar_Web_plugin_version>
         <Sonar_SonarJ_plugin_version>2.1.2</Sonar_SonarJ_plugin_version>
         <SonarBootStrap_plugin_version>2.0</SonarBootStrap_plugin_version>
-        <Source_plugin_version>2.1.2</Source_plugin_version>
+        <Source_plugin_version>2.2.1</Source_plugin_version>
         <Sql_plugin_version>1.5</Sql_plugin_version>
         <SureFire_plugin_version>2.12.4</SureFire_plugin_version>
         <SureFireReport_plugin_version>${SureFire_plugin_version}</SureFireReport_plugin_version>
