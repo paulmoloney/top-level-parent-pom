@@ -79,7 +79,7 @@ under the License.
         <downloadJavadocs>false</downloadJavadocs>
         <downloadSources>false</downloadSources>
 
-        <CheckStyle_dependency_jar>5.5</CheckStyle_dependency_jar>
+        <CheckStyle_dependency_jar>8.18</CheckStyle_dependency_jar>
         <Cobertura_dependency_jar>1.9.4.1</Cobertura_dependency_jar>
         <Clojure_dependency_jar>1.4.0</Clojure_dependency_jar>
         <FindBugs_dependency_jar>2.0.1</FindBugs_dependency_jar>
