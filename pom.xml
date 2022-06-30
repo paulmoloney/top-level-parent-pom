@@ -309,7 +309,7 @@ under the License.
         <pluginVersionMessage><![CDATA[Best Practice is to always define plugin versions!]]></pluginVersionMessage>
 
         <plexus_io_version>2.0.4</plexus_io_version>
-        <plexus_archiver_version>2.1.1</plexus_archiver_version>
+        <plexus_archiver_version>3.6.0</plexus_archiver_version>
         <plexus_compiler_id>javac</plexus_compiler_id>
         <plexus_compiler_version>1.9.1</plexus_compiler_version>
 
